@@ -1,0 +1,2375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>Pandemic-Simulator.model.particle API documentation</title>
+<meta name="description" content="Element of the model.
+Contains the particle class." />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Pandemic-Simulator.model.particle</code></h1>
+</header>
+<section id="section-intro">
+<p>Element of the model.
+Contains the particle class.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+    Element of the model.
+    Contains the particle class.
+&#34;&#34;&#34;
+
+import math
+from random import *
+
+from constants import *
+from model.particleState import ParticleState
+from model.simulationParameter import SimulationParameter
+from util import get_percentage, get_percentage_infectious
+
+
+class Particle:
+    &#34;&#34;&#34;A particle which represents a human in the simulation.
+
+    Attributes
+    ----------
+    simulation_parameter : SimulationParameter
+        the general simulation parameter object
+    state : ParticleState
+        contains the current health status
+    pos_x : float
+        contains the current x position in the world
+    pos_y : float
+        contains the current y position in the world
+    home_pos_x : float
+        contains the home y position in the world
+    home_pos_y : float
+        contains the home y position in the world
+    counter_lock_change_direction : int
+        contains the number of fps where the particle cannot change the direction randomly
+    direction : int
+        contains the direction in degree where the particle moves next
+    last_collision_with: Particle
+        contains the particle that had the last collision with the current particle
+    day_of_infection: int
+        contains the day of the infection
+    will_die : bool
+        contains if the particle will die after an infection
+    day_death_test : int
+        contains the last day where was tested if the particle would die
+    day_heal_test : int
+        contains the last day where was tested if the particle would recover
+    day_infectious_test : int
+        contains the last day where was tested if the particle would become infectious
+    quarantine : bool
+        contains if the particle is in quarantine
+    is_immune : bool
+        contains if the particle is immune
+    age : int
+        contains the age of the particle
+    in_risk_group : bool
+        contains if the particle is in the risk group
+    world_width : float
+        contains the width of the world
+    world_height : float
+        contains the height of the world
+    &#34;&#34;&#34;
+
+    def __init__(self, size_world: dict, simulation_parameter: SimulationParameter) -&gt; None:
+        &#34;&#34;&#34;Inits the particle
+
+        Parameters
+        ----------
+        size_world: dict
+            dict of the size of the world which contains the width and height
+        simulation_parameter: SimulationParameter
+            the general simulation parameter object
+        &#34;&#34;&#34;
+        self.simulation_parameter = simulation_parameter
+        self.state = ParticleState.HEALTHY
+        self.pos_x = randint(DRAW_PARTICLE_RADIUS, int(size_world[&#39;width&#39;] - HOUSE_PIXMAP_SIZE * 2)) - int(
+            size_world[&#39;width&#39;] - HOUSE_PIXMAP_SIZE * 2) / 2
+        self.pos_y = randint(5, int(size_world[&#39;height&#39;] - HOUSE_PIXMAP_SIZE * 2)) - int(
+            size_world[&#39;height&#39;] - HOUSE_PIXMAP_SIZE * 2) / 2
+        self.home_pos_x = self.pos_x
+        self.home_pos_y = self.pos_y
+        self.counter_lock_change_direction = 0
+
+        self.direction = self.compute_direction(0, 360)
+
+        self.last_collision_with = None
+
+        self.day_of_infection = 0
+        self.will_die = False
+        self.day_death_test = 0
+        self.day_heal_test = 0
+        self.day_infectious_test = 0
+        self.quarantine = False
+        self.is_immune = False
+
+        self.age = randint(1, 100)
+        self.in_risk_group = self.test_risk_group()
+
+        self.world_width = int(size_world[&#39;width&#39;]) / 2
+        self.world_height = int(size_world[&#39;height&#39;]) / 2
+
+    &#34;&#34;&#34;
+    Getter
+    &#34;&#34;&#34;
+
+    def get_pos(self) -&gt; list:
+        &#34;&#34;&#34;Returns the current position
+
+        Returns
+        -------
+        list:
+            list which contains the current x and y position
+        &#34;&#34;&#34;
+        return [self.pos_x, self.pos_y]
+
+    def get_home_pos(self) -&gt; list:
+        &#34;&#34;&#34;Returns the home position
+
+        Returns
+        -------
+        list:
+            list which contains the home x and y position
+        &#34;&#34;&#34;
+        return [self.home_pos_x, self.home_pos_y]
+
+    def get_last_collision(self):
+        &#34;&#34;&#34;Returns the particle from the last collision
+
+        Returns
+        -------
+        Particle:
+            particle of the last collision
+        &#34;&#34;&#34;
+        return self.last_collision_with
+
+    def get_state(self) -&gt; ParticleState:
+        &#34;&#34;&#34;Returns the current state of the particle
+
+        Returns
+        -------
+        ParticleState:
+            the current state of the particle
+        &#34;&#34;&#34;
+        return self.state
+
+    def get_in_risk_group(self) -&gt; bool:
+        &#34;&#34;&#34;Returns if the particle is in the risk group
+
+        Returns
+        -------
+        bool:
+            is the particle in the risk group?
+        &#34;&#34;&#34;
+        return self.in_risk_group
+
+    def get_quarantine(self) -&gt; bool:
+        &#34;&#34;&#34;Returns if the particle is in quarantine
+
+        Returns
+        -------
+        bool:
+            is the particle quarantined?
+        &#34;&#34;&#34;
+        return self.quarantine
+
+    &#34;&#34;&#34;
+    Setter
+    &#34;&#34;&#34;
+
+    def set_state(self, status: ParticleState) -&gt; None:
+        &#34;&#34;&#34;Sets the current status
+
+        Parameters
+        ----------
+        status: ParticleState
+            new state of the particle
+        &#34;&#34;&#34;
+        self.state = status
+
+    def set_immune_state(self) -&gt; None:
+        &#34;&#34;&#34;Sets the current status to immune&#34;&#34;&#34;
+        self.state = ParticleState.IMMUNE
+
+    def set_deceased_state(self) -&gt; None:
+        &#34;&#34;&#34;Sets the current status to deceased&#34;&#34;&#34;
+        self.state = ParticleState.DECEASED
+
+    def set_world_size(self, old_size: dict, new_size: dict) -&gt; None:
+        &#34;&#34;&#34;Sets the world size of the particle to the new size and
+        corrects the x and y position relative to the new size
+
+        Parameters
+        ----------
+        old_size: dict
+            contains the old width and height of the world
+        new_size: dict
+            contains the new width and height of the world
+        &#34;&#34;&#34;
+
+        if old_size[&#39;width&#39;] != new_size[&#39;width&#39;] and old_size[&#39;width&#39;] &gt; 0:
+            self.pos_x *= new_size[&#39;width&#39;] / old_size[&#39;width&#39;]
+            self.home_pos_x *= new_size[&#39;width&#39;] / old_size[&#39;width&#39;]
+        if old_size[&#39;height&#39;] != new_size[&#39;height&#39;] and old_size[&#39;height&#39;] &gt; 0:
+            self.pos_y *= new_size[&#39;height&#39;] / old_size[&#39;height&#39;]
+            self.home_pos_y *= new_size[&#39;height&#39;] / old_size[&#39;height&#39;]
+
+    def set_quarantine(self, quarantine: bool) -&gt; None:
+        &#34;&#34;&#34;Calculates and sets if the particle will be quarantined
+
+        Parameters
+        ----------
+        quarantine: bool
+            will the particle be quarantined
+
+        &#34;&#34;&#34;
+        if quarantine:
+            if randint(0, 99) &gt; int(self.simulation_parameter.get_parameters()[&#39;quarantine_breakout&#39;]):
+                self.quarantine = True
+        else:
+            self.quarantine = False
+
+    def set_will_die(self, day: int) -&gt; None:
+        &#34;&#34;&#34;Calculates and sets if the particle will die
+
+        Parameters
+        ----------
+        day: int
+            current day
+
+        &#34;&#34;&#34;
+        simulation_parameter = self.simulation_parameter.get_parameters()
+        if self.in_risk_group:
+            if randint(0, 99) &lt; int(simulation_parameter[&#39;risk_group_death_rate&#39;]):
+                self.will_die = True
+        else:
+            if randint(0, 99) &lt; int(simulation_parameter[&#39;death_rate&#39;]):
+                self.will_die = True
+        self.day_of_infection = day
+
+    def set_immune(self) -&gt; None:
+        &#34;&#34;&#34;Calculates and sets if the particle is immune
+        &#34;&#34;&#34;
+        if self.simulation_parameter.get_parameters()[&#39;reinfection_after_recovery&#39;]:
+            if randint(0, 99) &gt; int(self.simulation_parameter.get_parameters()[&#39;reinfection_rate&#39;]):
+                self.is_immune = True
+        else:
+            self.is_immune = True
+
+    def becomes_infected(self, day: int) -&gt; None:
+        &#34;&#34;&#34;Inits the particle as infected and calculates if he dies, becomes immune or becomes quarantined.
+
+        Parameters
+        ----------
+        day: int
+            day of infection
+        &#34;&#34;&#34;
+        self.set_state(ParticleState.INFECTED)
+        self.set_will_die(day)
+        self.set_immune()
+        if self.simulation_parameter.get_parameters()[&#39;quarantine&#39;]:
+            self.set_quarantine(True)
+
+    def init_infectious(self, day: int) -&gt; None:
+        &#34;&#34;&#34;Inits the particle as infectious and calculates if he dies, becomes immune or becomes quarantined.
+
+        Parameters
+        ----------
+        day: int
+            day of infection
+        &#34;&#34;&#34;
+        self.set_state(ParticleState.INFECTIOUS)
+        self.set_will_die(day)
+        self.set_immune()
+        if self.simulation_parameter.get_parameters()[&#39;quarantine&#39;]:
+            self.set_quarantine(True)
+
+    def simulate(self, speed: float, day: int) -&gt; list:
+        &#34;&#34;&#34;Simulates a step
+
+        Parameters
+        ----------
+        speed: float
+            speed of the particle
+        day: int
+            current day
+
+        Returns
+        -------
+        list:
+            contains the effects that count happened in this step
+        &#34;&#34;&#34;
+        previous_status = self.state
+        self.move(speed)
+        if self.state == ParticleState.INFECTED or self.state == ParticleState.INFECTIOUS:
+            infectious = self.becomes_infectious(day)
+            deceased = self.dies(day)
+            immune = self.recovers(day)
+            return [infectious, deceased, immune, previous_status]
+        return [False, False, 0, previous_status]
+
+    def move(self, speed: float) -&gt; None:
+        &#34;&#34;&#34;Moves the particle if he is not quarantined. Checks also if the particle has to be pushed off
+
+        Parameters
+        ----------
+        speed: float
+            speed of the particle
+        &#34;&#34;&#34;
+        if not self.quarantine:
+            self.push_off_wall(speed)
+            if self.simulation_parameter.get_parameters()[&#39;lockdown&#39;]:
+                self.push_off_movement_radius()
+            self.pos_x += math.cos(self.direction * math.pi / 180) * speed
+            self.pos_y -= math.sin(self.direction * math.pi / 180) * speed
+
+        if self.counter_lock_change_direction &gt; 0:
+            self.counter_lock_change_direction -= 1
+        elif self.counter_lock_change_direction &lt;= 0:
+            self.last_collision_with = None
+
+    def push_off_wall(self, speed: float) -&gt; None:
+        &#34;&#34;&#34;Calculates of the particle is near a wall and pushes it off otherwise the particle can change its
+        direction randomly
+
+        Parameters
+        ----------
+        speed: float
+            speed of the particle
+
+        &#34;&#34;&#34;
+        dif = 50 + speed * 3
+        if self.pos_y &gt; (self.world_height - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # bottom wall
+            self.direction = self.compute_direction(20, 160)
+        elif self.pos_y &lt; -(self.world_height - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # top wall
+            self.direction = self.compute_direction(200, 340)
+        if self.pos_x &gt; (self.world_width - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # right wall
+            self.direction = self.compute_direction(110, 250)
+        elif self.pos_x &lt; -(self.world_width - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # left wall
+            self.direction = self.compute_direction(290, 70)
+        if self.counter_lock_change_direction &lt;= 0 \
+                and not self.pos_y &gt; (self.world_height - dif) \
+                and not self.pos_y &lt; -(self.world_height - dif) \
+                and not self.pos_x &gt; (self.world_width - dif) \
+                and not self.pos_x &lt; -(self.world_width - dif):
+            if randint(0, 99) &lt; PARTICLE_PROBABILITY_CHANGE_OF_DIRECTION:
+                self.direction = self.compute_direction(0, 360)
+
+    def push_off_movement_radius(self) -&gt; None:
+        &#34;&#34;&#34; Calculates of the particle is near the limit of the movement radius and pushes it off&#34;&#34;&#34;
+        lockdown_state = self.simulation_parameter.get_parameters()[&#39;lockdown_state&#39;]
+        delta_x = int(abs(self.pos_x - self.home_pos_x))
+        delta_y = int(abs(self.pos_y - self.home_pos_y))
+        radius = self.world_height / lockdown_state
+        if self.world_height &gt; self.world_width:
+            radius = self.world_width / lockdown_state
+        if math.sqrt(delta_x * delta_x + delta_y * delta_y) &gt; radius and self.counter_lock_change_direction &lt;= 0:
+            self.turn_movement_radius(radius, (self.pos_x - self.home_pos_x), (self.pos_y - self.home_pos_y))
+
+    def turn_movement_radius(self, radius: float, delta_x: float, delta_y: float) -&gt; None:
+        &#34;&#34;&#34;Sets the direction if the particle collides with the movement radius
+
+        Parameters
+        ----------
+        radius: float
+            movement radius
+        delta_x: float
+            difference between the current and the home position in the x dimension
+        delta_y: float
+            difference between the current and the home position in the y dimension
+        &#34;&#34;&#34;
+        if delta_y &lt; -radius + 15:  # top wall
+            self.direction = self.compute_direction(220, 320)
+        elif delta_y &gt; radius - 15:  # bottom wall
+            self.direction = self.compute_direction(40, 140)
+        elif delta_x &gt; radius - 15:  # right wall
+            self.direction = self.compute_direction(140, 220)
+        elif delta_x &lt; -radius + 15:  # left wall
+            self.direction = self.compute_direction(310, 50)
+        self.counter_lock_change_direction = \
+            PARTICLE_TIME_DISABLE_CHANGE_OF_DIRECTION / self.simulation_parameter.get_parameters()[&#39;simulation_speed&#39;]
+
+    def collision_distance(self, test_particle) -&gt; float:
+        &#34;&#34;&#34;Calculates the distance between two particles
+
+        Parameters
+        ----------
+        test_particle: Particle
+            particle to test the collision
+
+        Returns
+        -------
+        float:
+            distance between the current and the test particle
+        &#34;&#34;&#34;
+        pos_test_particle = test_particle.get_pos()
+        delta_x = int(abs(self.pos_x - pos_test_particle[0]))
+        delta_y = int(abs(self.pos_y - pos_test_particle[1]))
+        return math.sqrt(delta_x * delta_x + delta_y * delta_y)
+
+    def collision_test(self, test_particle, social_distancing: bool) -&gt; bool:
+        &#34;&#34;&#34;Tests if the current and the test particle collides
+
+        Parameters
+        ----------
+        test_particle: Particle
+            particle to test the collision
+        social_distancing: bool
+            social distancing
+
+        Returns
+        -------
+        bool:
+            do the two particle collide?
+        &#34;&#34;&#34;
+        if self.get_last_collision() == test_particle and test_particle.get_last_collision() == self:
+            return False
+        distance = self.collision_distance(test_particle)
+        if social_distancing:
+            return distance &lt; int(self.simulation_parameter.get_parameters()[&#39;social_distancing_distance&#39;])
+        else:
+            return distance &lt; DRAW_PARTICLE_RADIUS * 2
+
+    def collision(self, collided_particle) -&gt; None:
+        &#34;&#34;&#34;Calculates and sets the new direction after a collision
+
+        Parameters
+        ----------
+        collided_particle:
+            particle which collides with the current
+        &#34;&#34;&#34;
+        self.last_collision_with = collided_particle
+        if self.direction &lt;= 180:
+            self.direction = self.direction + 180
+        else:
+            self.direction = self.direction - 180
+        self.counter_lock_change_direction = \
+            PARTICLE_TIME_DISABLE_CHANGE_OF_DIRECTION / self.simulation_parameter.get_parameters()[&#39;simulation_speed&#39;]
+
+    def compute_direction(self, lower: int, upper: int) -&gt; int:
+        &#34;&#34;&#34;Computes the new direction between two degrees
+
+        Parameters
+        ----------
+        lower:
+            minimum
+        upper:
+            maximum
+
+        Returns
+        -------
+        int:
+            new direction
+        &#34;&#34;&#34;
+        self.counter_lock_change_direction = PARTICLE_TIME_DISABLE_CHANGE_OF_DIRECTION
+        if lower &gt; upper:
+            return (randint(0, lower - upper) + 180) % 360
+        else:
+            return randint(lower, upper)
+
+    def becomes_infectious(self, day: int) -&gt; bool:
+        &#34;&#34;&#34;Calculates if the particle becomes infectious
+
+        Parameters
+        ----------
+        day: int
+            current day
+
+        Returns
+        -------
+        bool:
+            is the particle now infectious?
+        &#34;&#34;&#34;
+        if self.state == ParticleState.INFECTED and self.day_infectious_test != day:
+            self.day_infectious_test += 1
+            dif = abs(
+                int(self.day_of_infection) + int(self.simulation_parameter.get_parameters()[&#39;incubation_time&#39;]) - int(
+                    day))
+            percentage = get_percentage_infectious(dif)
+            if (int(self.day_of_infection) + int(
+                    self.simulation_parameter.get_parameters()[&#39;incubation_time&#39;])) + 3 &lt; int(day):
+                self.set_state(ParticleState.INFECTIOUS)
+                return True
+            else:
+                if randint(0, 99) &lt; percentage and dif &lt; 4:
+                    self.set_state(ParticleState.INFECTIOUS)
+                    return True
+        return False
+
+    def dies(self, day: int) -&gt; bool:
+        &#34;&#34;&#34;Calculates if the particle dies
+
+        Parameters
+        ----------
+        day: int
+            current day
+
+        Returns
+        -------
+        bool:
+            does the particle die?
+        &#34;&#34;&#34;
+        if self.will_die and self.day_death_test != day:
+            self.day_death_test += 1
+            day_of_death = int(
+                int(self.day_of_infection) + int(self.simulation_parameter.get_parameters()[&#39;average_death_time&#39;]))
+            dif = abs(int(day_of_death) - int(day))
+            percentage = get_percentage(dif)
+            if int(day_of_death) + 3 &lt; int(day):
+                self.set_state(ParticleState.DECEASED)
+                return True
+            else:
+                if randint(0, 99) &lt; percentage and dif &lt; 4:
+                    self.set_state(ParticleState.DECEASED)
+                    return True
+        return False
+
+    def test_recovered(self, day_of_recovery: int, day: int) -&gt; bool:
+        &#34;&#34;&#34; Tests if the particle recovers
+
+        Parameters
+        ----------
+        day_of_recovery: int
+            day when the particle will recover average
+        day: int
+            current day
+
+        Returns
+        -------
+        bool:
+            does the particle recover today
+        &#34;&#34;&#34;
+        dif = abs(int(day_of_recovery) - int(day))
+        percentage = get_percentage(dif)
+        if randint(0, 99) &lt; percentage and dif &lt; 4:
+            return True
+        elif int(day_of_recovery) + 3 &lt; int(day):
+            return True
+        else:
+            return False
+
+    def recovers(self, day: int) -&gt; int:
+        &#34;&#34;&#34;Calculates if the particle recovers
+
+        Parameters
+        ----------
+        day: int
+            current day
+
+        Returns
+        -------
+        bool:
+            does the particle recover?
+        &#34;&#34;&#34;
+        if not self.will_die \
+                and (self.state == ParticleState.INFECTED or self.state == ParticleState.INFECTIOUS) \
+                and self.day_heal_test != day:
+            self.day_heal_test += 1
+            simulation_parameters = self.simulation_parameter.get_parameters()
+            genesungstag = int(int(self.day_of_infection) + int(simulation_parameters[&#39;average_recover_time&#39;]))
+            if simulation_parameters[&#39;reinfection_after_recovery&#39;] and self.test_recovered(genesungstag, day):
+                self.set_quarantine(False)
+                if self.is_immune:
+                    self.set_state(ParticleState.IMMUNE)
+                    return 1
+                else:
+                    self.set_state(ParticleState.HEALTHY)
+                    return 2
+            elif self.test_recovered(genesungstag, day):
+                self.set_state(ParticleState.IMMUNE)
+                self.set_quarantine(False)
+                return 1
+        return 0
+
+    def test_infection(self, test_particle) -&gt; bool:
+        &#34;&#34;&#34;Calculates if the test particle infects the current particle
+
+        Parameters
+        ----------
+        test_particle: Particle
+            particle to test the infection
+
+        Returns
+        -------
+        bool:
+            does the test particle infects the current particle?
+        &#34;&#34;&#34;
+        if self.state == ParticleState.HEALTHY \
+                and test_particle.get_state() == ParticleState.INFECTIOUS \
+                and not test_particle.quarantine:
+            distance = self.collision_distance(test_particle)
+            if distance &lt; int(self.simulation_parameter.get_parameters()[&#39;infection_radius&#39;]):
+                if randint(0, 99) &lt; int(self.simulation_parameter.get_parameters()[&#39;infection_rate&#39;]):
+                    return True
+        return False
+
+    def test_risk_group(self) -&gt; bool:
+        &#34;&#34;&#34;Calculates if the particle is in the risk group
+
+        Returns
+        -------
+        bool:
+            is the particle in the risk group?
+        &#34;&#34;&#34;
+        simulation_parameters = self.simulation_parameter.get_parameters()
+        if simulation_parameters[&#39;risk_group&#39;] \
+                and int(simulation_parameters[&#39;risk_group_age&#39;][&#39;min&#39;]) &lt;= self.age &lt;= \
+                int(simulation_parameters[&#39;risk_group_age&#39;][&#39;max&#39;]):
+            return True
+        return False</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="Pandemic-Simulator.model.particle.getrandbits"><code class="name flex">
+<span>def <span class="ident">getrandbits</span></span>(<span>k, /)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>getrandbits(k) -&gt; x.
+Generates an int with k random bits.</p></div>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.random"><code class="name flex">
+<span>def <span class="ident">random</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>random() -&gt; x in the interval [0, 1).</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Pandemic-Simulator.model.particle.Particle"><code class="flex name class">
+<span>class <span class="ident">Particle</span></span>
+<span>(</span><span>size_world: dict, simulation_parameter: model.simulationParameter.SimulationParameter)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A particle which represents a human in the simulation.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>simulation_parameter</code></strong> :&ensp;<code>SimulationParameter</code></dt>
+<dd>the general simulation parameter object</dd>
+<dt><strong><code>state</code></strong> :&ensp;<code>ParticleState</code></dt>
+<dd>contains the current health status</dd>
+<dt><strong><code>pos_x</code></strong> :&ensp;<code>float</code></dt>
+<dd>contains the current x position in the world</dd>
+<dt><strong><code>pos_y</code></strong> :&ensp;<code>float</code></dt>
+<dd>contains the current y position in the world</dd>
+<dt><strong><code>home_pos_x</code></strong> :&ensp;<code>float</code></dt>
+<dd>contains the home y position in the world</dd>
+<dt><strong><code>home_pos_y</code></strong> :&ensp;<code>float</code></dt>
+<dd>contains the home y position in the world</dd>
+<dt><strong><code>counter_lock_change_direction</code></strong> :&ensp;<code>int</code></dt>
+<dd>contains the number of fps where the particle cannot change the direction randomly</dd>
+<dt><strong><code>direction</code></strong> :&ensp;<code>int</code></dt>
+<dd>contains the direction in degree where the particle moves next</dd>
+<dt><strong><code>last_collision_with</code></strong> :&ensp;<code><a title="Pandemic-Simulator.model.particle.Particle" href="#Pandemic-Simulator.model.particle.Particle">Particle</a></code></dt>
+<dd>contains the particle that had the last collision with the current particle</dd>
+<dt><strong><code>day_of_infection</code></strong> :&ensp;<code>int</code></dt>
+<dd>contains the day of the infection</dd>
+<dt><strong><code>will_die</code></strong> :&ensp;<code>bool</code></dt>
+<dd>contains if the particle will die after an infection</dd>
+<dt><strong><code>day_death_test</code></strong> :&ensp;<code>int</code></dt>
+<dd>contains the last day where was tested if the particle would die</dd>
+<dt><strong><code>day_heal_test</code></strong> :&ensp;<code>int</code></dt>
+<dd>contains the last day where was tested if the particle would recover</dd>
+<dt><strong><code>day_infectious_test</code></strong> :&ensp;<code>int</code></dt>
+<dd>contains the last day where was tested if the particle would become infectious</dd>
+<dt><strong><code>quarantine</code></strong> :&ensp;<code>bool</code></dt>
+<dd>contains if the particle is in quarantine</dd>
+<dt><strong><code>is_immune</code></strong> :&ensp;<code>bool</code></dt>
+<dd>contains if the particle is immune</dd>
+<dt><strong><code>age</code></strong> :&ensp;<code>int</code></dt>
+<dd>contains the age of the particle</dd>
+<dt><strong><code>in_risk_group</code></strong> :&ensp;<code>bool</code></dt>
+<dd>contains if the particle is in the risk group</dd>
+<dt><strong><code>world_width</code></strong> :&ensp;<code>float</code></dt>
+<dd>contains the width of the world</dd>
+<dt><strong><code>world_height</code></strong> :&ensp;<code>float</code></dt>
+<dd>contains the height of the world</dd>
+</dl>
+<p>Inits the particle</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>size_world</code></strong> :&ensp;<code>dict</code></dt>
+<dd>dict of the size of the world which contains the width and height</dd>
+<dt><strong><code>simulation_parameter</code></strong> :&ensp;<code>SimulationParameter</code></dt>
+<dd>the general simulation parameter object</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Particle:
+    &#34;&#34;&#34;A particle which represents a human in the simulation.
+
+    Attributes
+    ----------
+    simulation_parameter : SimulationParameter
+        the general simulation parameter object
+    state : ParticleState
+        contains the current health status
+    pos_x : float
+        contains the current x position in the world
+    pos_y : float
+        contains the current y position in the world
+    home_pos_x : float
+        contains the home y position in the world
+    home_pos_y : float
+        contains the home y position in the world
+    counter_lock_change_direction : int
+        contains the number of fps where the particle cannot change the direction randomly
+    direction : int
+        contains the direction in degree where the particle moves next
+    last_collision_with: Particle
+        contains the particle that had the last collision with the current particle
+    day_of_infection: int
+        contains the day of the infection
+    will_die : bool
+        contains if the particle will die after an infection
+    day_death_test : int
+        contains the last day where was tested if the particle would die
+    day_heal_test : int
+        contains the last day where was tested if the particle would recover
+    day_infectious_test : int
+        contains the last day where was tested if the particle would become infectious
+    quarantine : bool
+        contains if the particle is in quarantine
+    is_immune : bool
+        contains if the particle is immune
+    age : int
+        contains the age of the particle
+    in_risk_group : bool
+        contains if the particle is in the risk group
+    world_width : float
+        contains the width of the world
+    world_height : float
+        contains the height of the world
+    &#34;&#34;&#34;
+
+    def __init__(self, size_world: dict, simulation_parameter: SimulationParameter) -&gt; None:
+        &#34;&#34;&#34;Inits the particle
+
+        Parameters
+        ----------
+        size_world: dict
+            dict of the size of the world which contains the width and height
+        simulation_parameter: SimulationParameter
+            the general simulation parameter object
+        &#34;&#34;&#34;
+        self.simulation_parameter = simulation_parameter
+        self.state = ParticleState.HEALTHY
+        self.pos_x = randint(DRAW_PARTICLE_RADIUS, int(size_world[&#39;width&#39;] - HOUSE_PIXMAP_SIZE * 2)) - int(
+            size_world[&#39;width&#39;] - HOUSE_PIXMAP_SIZE * 2) / 2
+        self.pos_y = randint(5, int(size_world[&#39;height&#39;] - HOUSE_PIXMAP_SIZE * 2)) - int(
+            size_world[&#39;height&#39;] - HOUSE_PIXMAP_SIZE * 2) / 2
+        self.home_pos_x = self.pos_x
+        self.home_pos_y = self.pos_y
+        self.counter_lock_change_direction = 0
+
+        self.direction = self.compute_direction(0, 360)
+
+        self.last_collision_with = None
+
+        self.day_of_infection = 0
+        self.will_die = False
+        self.day_death_test = 0
+        self.day_heal_test = 0
+        self.day_infectious_test = 0
+        self.quarantine = False
+        self.is_immune = False
+
+        self.age = randint(1, 100)
+        self.in_risk_group = self.test_risk_group()
+
+        self.world_width = int(size_world[&#39;width&#39;]) / 2
+        self.world_height = int(size_world[&#39;height&#39;]) / 2
+
+    &#34;&#34;&#34;
+    Getter
+    &#34;&#34;&#34;
+
+    def get_pos(self) -&gt; list:
+        &#34;&#34;&#34;Returns the current position
+
+        Returns
+        -------
+        list:
+            list which contains the current x and y position
+        &#34;&#34;&#34;
+        return [self.pos_x, self.pos_y]
+
+    def get_home_pos(self) -&gt; list:
+        &#34;&#34;&#34;Returns the home position
+
+        Returns
+        -------
+        list:
+            list which contains the home x and y position
+        &#34;&#34;&#34;
+        return [self.home_pos_x, self.home_pos_y]
+
+    def get_last_collision(self):
+        &#34;&#34;&#34;Returns the particle from the last collision
+
+        Returns
+        -------
+        Particle:
+            particle of the last collision
+        &#34;&#34;&#34;
+        return self.last_collision_with
+
+    def get_state(self) -&gt; ParticleState:
+        &#34;&#34;&#34;Returns the current state of the particle
+
+        Returns
+        -------
+        ParticleState:
+            the current state of the particle
+        &#34;&#34;&#34;
+        return self.state
+
+    def get_in_risk_group(self) -&gt; bool:
+        &#34;&#34;&#34;Returns if the particle is in the risk group
+
+        Returns
+        -------
+        bool:
+            is the particle in the risk group?
+        &#34;&#34;&#34;
+        return self.in_risk_group
+
+    def get_quarantine(self) -&gt; bool:
+        &#34;&#34;&#34;Returns if the particle is in quarantine
+
+        Returns
+        -------
+        bool:
+            is the particle quarantined?
+        &#34;&#34;&#34;
+        return self.quarantine
+
+    &#34;&#34;&#34;
+    Setter
+    &#34;&#34;&#34;
+
+    def set_state(self, status: ParticleState) -&gt; None:
+        &#34;&#34;&#34;Sets the current status
+
+        Parameters
+        ----------
+        status: ParticleState
+            new state of the particle
+        &#34;&#34;&#34;
+        self.state = status
+
+    def set_immune_state(self) -&gt; None:
+        &#34;&#34;&#34;Sets the current status to immune&#34;&#34;&#34;
+        self.state = ParticleState.IMMUNE
+
+    def set_deceased_state(self) -&gt; None:
+        &#34;&#34;&#34;Sets the current status to deceased&#34;&#34;&#34;
+        self.state = ParticleState.DECEASED
+
+    def set_world_size(self, old_size: dict, new_size: dict) -&gt; None:
+        &#34;&#34;&#34;Sets the world size of the particle to the new size and
+        corrects the x and y position relative to the new size
+
+        Parameters
+        ----------
+        old_size: dict
+            contains the old width and height of the world
+        new_size: dict
+            contains the new width and height of the world
+        &#34;&#34;&#34;
+
+        if old_size[&#39;width&#39;] != new_size[&#39;width&#39;] and old_size[&#39;width&#39;] &gt; 0:
+            self.pos_x *= new_size[&#39;width&#39;] / old_size[&#39;width&#39;]
+            self.home_pos_x *= new_size[&#39;width&#39;] / old_size[&#39;width&#39;]
+        if old_size[&#39;height&#39;] != new_size[&#39;height&#39;] and old_size[&#39;height&#39;] &gt; 0:
+            self.pos_y *= new_size[&#39;height&#39;] / old_size[&#39;height&#39;]
+            self.home_pos_y *= new_size[&#39;height&#39;] / old_size[&#39;height&#39;]
+
+    def set_quarantine(self, quarantine: bool) -&gt; None:
+        &#34;&#34;&#34;Calculates and sets if the particle will be quarantined
+
+        Parameters
+        ----------
+        quarantine: bool
+            will the particle be quarantined
+
+        &#34;&#34;&#34;
+        if quarantine:
+            if randint(0, 99) &gt; int(self.simulation_parameter.get_parameters()[&#39;quarantine_breakout&#39;]):
+                self.quarantine = True
+        else:
+            self.quarantine = False
+
+    def set_will_die(self, day: int) -&gt; None:
+        &#34;&#34;&#34;Calculates and sets if the particle will die
+
+        Parameters
+        ----------
+        day: int
+            current day
+
+        &#34;&#34;&#34;
+        simulation_parameter = self.simulation_parameter.get_parameters()
+        if self.in_risk_group:
+            if randint(0, 99) &lt; int(simulation_parameter[&#39;risk_group_death_rate&#39;]):
+                self.will_die = True
+        else:
+            if randint(0, 99) &lt; int(simulation_parameter[&#39;death_rate&#39;]):
+                self.will_die = True
+        self.day_of_infection = day
+
+    def set_immune(self) -&gt; None:
+        &#34;&#34;&#34;Calculates and sets if the particle is immune
+        &#34;&#34;&#34;
+        if self.simulation_parameter.get_parameters()[&#39;reinfection_after_recovery&#39;]:
+            if randint(0, 99) &gt; int(self.simulation_parameter.get_parameters()[&#39;reinfection_rate&#39;]):
+                self.is_immune = True
+        else:
+            self.is_immune = True
+
+    def becomes_infected(self, day: int) -&gt; None:
+        &#34;&#34;&#34;Inits the particle as infected and calculates if he dies, becomes immune or becomes quarantined.
+
+        Parameters
+        ----------
+        day: int
+            day of infection
+        &#34;&#34;&#34;
+        self.set_state(ParticleState.INFECTED)
+        self.set_will_die(day)
+        self.set_immune()
+        if self.simulation_parameter.get_parameters()[&#39;quarantine&#39;]:
+            self.set_quarantine(True)
+
+    def init_infectious(self, day: int) -&gt; None:
+        &#34;&#34;&#34;Inits the particle as infectious and calculates if he dies, becomes immune or becomes quarantined.
+
+        Parameters
+        ----------
+        day: int
+            day of infection
+        &#34;&#34;&#34;
+        self.set_state(ParticleState.INFECTIOUS)
+        self.set_will_die(day)
+        self.set_immune()
+        if self.simulation_parameter.get_parameters()[&#39;quarantine&#39;]:
+            self.set_quarantine(True)
+
+    def simulate(self, speed: float, day: int) -&gt; list:
+        &#34;&#34;&#34;Simulates a step
+
+        Parameters
+        ----------
+        speed: float
+            speed of the particle
+        day: int
+            current day
+
+        Returns
+        -------
+        list:
+            contains the effects that count happened in this step
+        &#34;&#34;&#34;
+        previous_status = self.state
+        self.move(speed)
+        if self.state == ParticleState.INFECTED or self.state == ParticleState.INFECTIOUS:
+            infectious = self.becomes_infectious(day)
+            deceased = self.dies(day)
+            immune = self.recovers(day)
+            return [infectious, deceased, immune, previous_status]
+        return [False, False, 0, previous_status]
+
+    def move(self, speed: float) -&gt; None:
+        &#34;&#34;&#34;Moves the particle if he is not quarantined. Checks also if the particle has to be pushed off
+
+        Parameters
+        ----------
+        speed: float
+            speed of the particle
+        &#34;&#34;&#34;
+        if not self.quarantine:
+            self.push_off_wall(speed)
+            if self.simulation_parameter.get_parameters()[&#39;lockdown&#39;]:
+                self.push_off_movement_radius()
+            self.pos_x += math.cos(self.direction * math.pi / 180) * speed
+            self.pos_y -= math.sin(self.direction * math.pi / 180) * speed
+
+        if self.counter_lock_change_direction &gt; 0:
+            self.counter_lock_change_direction -= 1
+        elif self.counter_lock_change_direction &lt;= 0:
+            self.last_collision_with = None
+
+    def push_off_wall(self, speed: float) -&gt; None:
+        &#34;&#34;&#34;Calculates of the particle is near a wall and pushes it off otherwise the particle can change its
+        direction randomly
+
+        Parameters
+        ----------
+        speed: float
+            speed of the particle
+
+        &#34;&#34;&#34;
+        dif = 50 + speed * 3
+        if self.pos_y &gt; (self.world_height - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # bottom wall
+            self.direction = self.compute_direction(20, 160)
+        elif self.pos_y &lt; -(self.world_height - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # top wall
+            self.direction = self.compute_direction(200, 340)
+        if self.pos_x &gt; (self.world_width - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # right wall
+            self.direction = self.compute_direction(110, 250)
+        elif self.pos_x &lt; -(self.world_width - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # left wall
+            self.direction = self.compute_direction(290, 70)
+        if self.counter_lock_change_direction &lt;= 0 \
+                and not self.pos_y &gt; (self.world_height - dif) \
+                and not self.pos_y &lt; -(self.world_height - dif) \
+                and not self.pos_x &gt; (self.world_width - dif) \
+                and not self.pos_x &lt; -(self.world_width - dif):
+            if randint(0, 99) &lt; PARTICLE_PROBABILITY_CHANGE_OF_DIRECTION:
+                self.direction = self.compute_direction(0, 360)
+
+    def push_off_movement_radius(self) -&gt; None:
+        &#34;&#34;&#34; Calculates of the particle is near the limit of the movement radius and pushes it off&#34;&#34;&#34;
+        lockdown_state = self.simulation_parameter.get_parameters()[&#39;lockdown_state&#39;]
+        delta_x = int(abs(self.pos_x - self.home_pos_x))
+        delta_y = int(abs(self.pos_y - self.home_pos_y))
+        radius = self.world_height / lockdown_state
+        if self.world_height &gt; self.world_width:
+            radius = self.world_width / lockdown_state
+        if math.sqrt(delta_x * delta_x + delta_y * delta_y) &gt; radius and self.counter_lock_change_direction &lt;= 0:
+            self.turn_movement_radius(radius, (self.pos_x - self.home_pos_x), (self.pos_y - self.home_pos_y))
+
+    def turn_movement_radius(self, radius: float, delta_x: float, delta_y: float) -&gt; None:
+        &#34;&#34;&#34;Sets the direction if the particle collides with the movement radius
+
+        Parameters
+        ----------
+        radius: float
+            movement radius
+        delta_x: float
+            difference between the current and the home position in the x dimension
+        delta_y: float
+            difference between the current and the home position in the y dimension
+        &#34;&#34;&#34;
+        if delta_y &lt; -radius + 15:  # top wall
+            self.direction = self.compute_direction(220, 320)
+        elif delta_y &gt; radius - 15:  # bottom wall
+            self.direction = self.compute_direction(40, 140)
+        elif delta_x &gt; radius - 15:  # right wall
+            self.direction = self.compute_direction(140, 220)
+        elif delta_x &lt; -radius + 15:  # left wall
+            self.direction = self.compute_direction(310, 50)
+        self.counter_lock_change_direction = \
+            PARTICLE_TIME_DISABLE_CHANGE_OF_DIRECTION / self.simulation_parameter.get_parameters()[&#39;simulation_speed&#39;]
+
+    def collision_distance(self, test_particle) -&gt; float:
+        &#34;&#34;&#34;Calculates the distance between two particles
+
+        Parameters
+        ----------
+        test_particle: Particle
+            particle to test the collision
+
+        Returns
+        -------
+        float:
+            distance between the current and the test particle
+        &#34;&#34;&#34;
+        pos_test_particle = test_particle.get_pos()
+        delta_x = int(abs(self.pos_x - pos_test_particle[0]))
+        delta_y = int(abs(self.pos_y - pos_test_particle[1]))
+        return math.sqrt(delta_x * delta_x + delta_y * delta_y)
+
+    def collision_test(self, test_particle, social_distancing: bool) -&gt; bool:
+        &#34;&#34;&#34;Tests if the current and the test particle collides
+
+        Parameters
+        ----------
+        test_particle: Particle
+            particle to test the collision
+        social_distancing: bool
+            social distancing
+
+        Returns
+        -------
+        bool:
+            do the two particle collide?
+        &#34;&#34;&#34;
+        if self.get_last_collision() == test_particle and test_particle.get_last_collision() == self:
+            return False
+        distance = self.collision_distance(test_particle)
+        if social_distancing:
+            return distance &lt; int(self.simulation_parameter.get_parameters()[&#39;social_distancing_distance&#39;])
+        else:
+            return distance &lt; DRAW_PARTICLE_RADIUS * 2
+
+    def collision(self, collided_particle) -&gt; None:
+        &#34;&#34;&#34;Calculates and sets the new direction after a collision
+
+        Parameters
+        ----------
+        collided_particle:
+            particle which collides with the current
+        &#34;&#34;&#34;
+        self.last_collision_with = collided_particle
+        if self.direction &lt;= 180:
+            self.direction = self.direction + 180
+        else:
+            self.direction = self.direction - 180
+        self.counter_lock_change_direction = \
+            PARTICLE_TIME_DISABLE_CHANGE_OF_DIRECTION / self.simulation_parameter.get_parameters()[&#39;simulation_speed&#39;]
+
+    def compute_direction(self, lower: int, upper: int) -&gt; int:
+        &#34;&#34;&#34;Computes the new direction between two degrees
+
+        Parameters
+        ----------
+        lower:
+            minimum
+        upper:
+            maximum
+
+        Returns
+        -------
+        int:
+            new direction
+        &#34;&#34;&#34;
+        self.counter_lock_change_direction = PARTICLE_TIME_DISABLE_CHANGE_OF_DIRECTION
+        if lower &gt; upper:
+            return (randint(0, lower - upper) + 180) % 360
+        else:
+            return randint(lower, upper)
+
+    def becomes_infectious(self, day: int) -&gt; bool:
+        &#34;&#34;&#34;Calculates if the particle becomes infectious
+
+        Parameters
+        ----------
+        day: int
+            current day
+
+        Returns
+        -------
+        bool:
+            is the particle now infectious?
+        &#34;&#34;&#34;
+        if self.state == ParticleState.INFECTED and self.day_infectious_test != day:
+            self.day_infectious_test += 1
+            dif = abs(
+                int(self.day_of_infection) + int(self.simulation_parameter.get_parameters()[&#39;incubation_time&#39;]) - int(
+                    day))
+            percentage = get_percentage_infectious(dif)
+            if (int(self.day_of_infection) + int(
+                    self.simulation_parameter.get_parameters()[&#39;incubation_time&#39;])) + 3 &lt; int(day):
+                self.set_state(ParticleState.INFECTIOUS)
+                return True
+            else:
+                if randint(0, 99) &lt; percentage and dif &lt; 4:
+                    self.set_state(ParticleState.INFECTIOUS)
+                    return True
+        return False
+
+    def dies(self, day: int) -&gt; bool:
+        &#34;&#34;&#34;Calculates if the particle dies
+
+        Parameters
+        ----------
+        day: int
+            current day
+
+        Returns
+        -------
+        bool:
+            does the particle die?
+        &#34;&#34;&#34;
+        if self.will_die and self.day_death_test != day:
+            self.day_death_test += 1
+            day_of_death = int(
+                int(self.day_of_infection) + int(self.simulation_parameter.get_parameters()[&#39;average_death_time&#39;]))
+            dif = abs(int(day_of_death) - int(day))
+            percentage = get_percentage(dif)
+            if int(day_of_death) + 3 &lt; int(day):
+                self.set_state(ParticleState.DECEASED)
+                return True
+            else:
+                if randint(0, 99) &lt; percentage and dif &lt; 4:
+                    self.set_state(ParticleState.DECEASED)
+                    return True
+        return False
+
+    def test_recovered(self, day_of_recovery: int, day: int) -&gt; bool:
+        &#34;&#34;&#34; Tests if the particle recovers
+
+        Parameters
+        ----------
+        day_of_recovery: int
+            day when the particle will recover average
+        day: int
+            current day
+
+        Returns
+        -------
+        bool:
+            does the particle recover today
+        &#34;&#34;&#34;
+        dif = abs(int(day_of_recovery) - int(day))
+        percentage = get_percentage(dif)
+        if randint(0, 99) &lt; percentage and dif &lt; 4:
+            return True
+        elif int(day_of_recovery) + 3 &lt; int(day):
+            return True
+        else:
+            return False
+
+    def recovers(self, day: int) -&gt; int:
+        &#34;&#34;&#34;Calculates if the particle recovers
+
+        Parameters
+        ----------
+        day: int
+            current day
+
+        Returns
+        -------
+        bool:
+            does the particle recover?
+        &#34;&#34;&#34;
+        if not self.will_die \
+                and (self.state == ParticleState.INFECTED or self.state == ParticleState.INFECTIOUS) \
+                and self.day_heal_test != day:
+            self.day_heal_test += 1
+            simulation_parameters = self.simulation_parameter.get_parameters()
+            genesungstag = int(int(self.day_of_infection) + int(simulation_parameters[&#39;average_recover_time&#39;]))
+            if simulation_parameters[&#39;reinfection_after_recovery&#39;] and self.test_recovered(genesungstag, day):
+                self.set_quarantine(False)
+                if self.is_immune:
+                    self.set_state(ParticleState.IMMUNE)
+                    return 1
+                else:
+                    self.set_state(ParticleState.HEALTHY)
+                    return 2
+            elif self.test_recovered(genesungstag, day):
+                self.set_state(ParticleState.IMMUNE)
+                self.set_quarantine(False)
+                return 1
+        return 0
+
+    def test_infection(self, test_particle) -&gt; bool:
+        &#34;&#34;&#34;Calculates if the test particle infects the current particle
+
+        Parameters
+        ----------
+        test_particle: Particle
+            particle to test the infection
+
+        Returns
+        -------
+        bool:
+            does the test particle infects the current particle?
+        &#34;&#34;&#34;
+        if self.state == ParticleState.HEALTHY \
+                and test_particle.get_state() == ParticleState.INFECTIOUS \
+                and not test_particle.quarantine:
+            distance = self.collision_distance(test_particle)
+            if distance &lt; int(self.simulation_parameter.get_parameters()[&#39;infection_radius&#39;]):
+                if randint(0, 99) &lt; int(self.simulation_parameter.get_parameters()[&#39;infection_rate&#39;]):
+                    return True
+        return False
+
+    def test_risk_group(self) -&gt; bool:
+        &#34;&#34;&#34;Calculates if the particle is in the risk group
+
+        Returns
+        -------
+        bool:
+            is the particle in the risk group?
+        &#34;&#34;&#34;
+        simulation_parameters = self.simulation_parameter.get_parameters()
+        if simulation_parameters[&#39;risk_group&#39;] \
+                and int(simulation_parameters[&#39;risk_group_age&#39;][&#39;min&#39;]) &lt;= self.age &lt;= \
+                int(simulation_parameters[&#39;risk_group_age&#39;][&#39;max&#39;]):
+            return True
+        return False</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="Pandemic-Simulator.model.particle.Particle.becomes_infected"><code class="name flex">
+<span>def <span class="ident">becomes_infected</span></span>(<span>self, day: int) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Inits the particle as infected and calculates if he dies, becomes immune or becomes quarantined.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>day</code></strong> :&ensp;<code>int</code></dt>
+<dd>day of infection</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def becomes_infected(self, day: int) -&gt; None:
+    &#34;&#34;&#34;Inits the particle as infected and calculates if he dies, becomes immune or becomes quarantined.
+
+    Parameters
+    ----------
+    day: int
+        day of infection
+    &#34;&#34;&#34;
+    self.set_state(ParticleState.INFECTED)
+    self.set_will_die(day)
+    self.set_immune()
+    if self.simulation_parameter.get_parameters()[&#39;quarantine&#39;]:
+        self.set_quarantine(True)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.becomes_infectious"><code class="name flex">
+<span>def <span class="ident">becomes_infectious</span></span>(<span>self, day: int) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates if the particle becomes infectious</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>day</code></strong> :&ensp;<code>int</code></dt>
+<dd>current day</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool:</code></dt>
+<dd>is the particle now infectious?</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def becomes_infectious(self, day: int) -&gt; bool:
+    &#34;&#34;&#34;Calculates if the particle becomes infectious
+
+    Parameters
+    ----------
+    day: int
+        current day
+
+    Returns
+    -------
+    bool:
+        is the particle now infectious?
+    &#34;&#34;&#34;
+    if self.state == ParticleState.INFECTED and self.day_infectious_test != day:
+        self.day_infectious_test += 1
+        dif = abs(
+            int(self.day_of_infection) + int(self.simulation_parameter.get_parameters()[&#39;incubation_time&#39;]) - int(
+                day))
+        percentage = get_percentage_infectious(dif)
+        if (int(self.day_of_infection) + int(
+                self.simulation_parameter.get_parameters()[&#39;incubation_time&#39;])) + 3 &lt; int(day):
+            self.set_state(ParticleState.INFECTIOUS)
+            return True
+        else:
+            if randint(0, 99) &lt; percentage and dif &lt; 4:
+                self.set_state(ParticleState.INFECTIOUS)
+                return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.collision"><code class="name flex">
+<span>def <span class="ident">collision</span></span>(<span>self, collided_particle) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates and sets the new direction after a collision</p>
+<h2 id="parameters">Parameters</h2>
+<p>collided_particle:
+particle which collides with the current</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def collision(self, collided_particle) -&gt; None:
+    &#34;&#34;&#34;Calculates and sets the new direction after a collision
+
+    Parameters
+    ----------
+    collided_particle:
+        particle which collides with the current
+    &#34;&#34;&#34;
+    self.last_collision_with = collided_particle
+    if self.direction &lt;= 180:
+        self.direction = self.direction + 180
+    else:
+        self.direction = self.direction - 180
+    self.counter_lock_change_direction = \
+        PARTICLE_TIME_DISABLE_CHANGE_OF_DIRECTION / self.simulation_parameter.get_parameters()[&#39;simulation_speed&#39;]</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.collision_distance"><code class="name flex">
+<span>def <span class="ident">collision_distance</span></span>(<span>self, test_particle) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the distance between two particles</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>test_particle</code></strong> :&ensp;<code><a title="Pandemic-Simulator.model.particle.Particle" href="#Pandemic-Simulator.model.particle.Particle">Particle</a></code></dt>
+<dd>particle to test the collision</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float:</code></dt>
+<dd>distance between the current and the test particle</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def collision_distance(self, test_particle) -&gt; float:
+    &#34;&#34;&#34;Calculates the distance between two particles
+
+    Parameters
+    ----------
+    test_particle: Particle
+        particle to test the collision
+
+    Returns
+    -------
+    float:
+        distance between the current and the test particle
+    &#34;&#34;&#34;
+    pos_test_particle = test_particle.get_pos()
+    delta_x = int(abs(self.pos_x - pos_test_particle[0]))
+    delta_y = int(abs(self.pos_y - pos_test_particle[1]))
+    return math.sqrt(delta_x * delta_x + delta_y * delta_y)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.collision_test"><code class="name flex">
+<span>def <span class="ident">collision_test</span></span>(<span>self, test_particle, social_distancing: bool) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tests if the current and the test particle collides</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>test_particle</code></strong> :&ensp;<code><a title="Pandemic-Simulator.model.particle.Particle" href="#Pandemic-Simulator.model.particle.Particle">Particle</a></code></dt>
+<dd>particle to test the collision</dd>
+<dt><strong><code>social_distancing</code></strong> :&ensp;<code>bool</code></dt>
+<dd>social distancing</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool:</code></dt>
+<dd>do the two particle collide?</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def collision_test(self, test_particle, social_distancing: bool) -&gt; bool:
+    &#34;&#34;&#34;Tests if the current and the test particle collides
+
+    Parameters
+    ----------
+    test_particle: Particle
+        particle to test the collision
+    social_distancing: bool
+        social distancing
+
+    Returns
+    -------
+    bool:
+        do the two particle collide?
+    &#34;&#34;&#34;
+    if self.get_last_collision() == test_particle and test_particle.get_last_collision() == self:
+        return False
+    distance = self.collision_distance(test_particle)
+    if social_distancing:
+        return distance &lt; int(self.simulation_parameter.get_parameters()[&#39;social_distancing_distance&#39;])
+    else:
+        return distance &lt; DRAW_PARTICLE_RADIUS * 2</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.compute_direction"><code class="name flex">
+<span>def <span class="ident">compute_direction</span></span>(<span>self, lower: int, upper: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the new direction between two degrees</p>
+<h2 id="parameters">Parameters</h2>
+<p>lower:
+minimum
+upper:
+maximum</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int:</code></dt>
+<dd>new direction</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_direction(self, lower: int, upper: int) -&gt; int:
+    &#34;&#34;&#34;Computes the new direction between two degrees
+
+    Parameters
+    ----------
+    lower:
+        minimum
+    upper:
+        maximum
+
+    Returns
+    -------
+    int:
+        new direction
+    &#34;&#34;&#34;
+    self.counter_lock_change_direction = PARTICLE_TIME_DISABLE_CHANGE_OF_DIRECTION
+    if lower &gt; upper:
+        return (randint(0, lower - upper) + 180) % 360
+    else:
+        return randint(lower, upper)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.dies"><code class="name flex">
+<span>def <span class="ident">dies</span></span>(<span>self, day: int) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates if the particle dies</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>day</code></strong> :&ensp;<code>int</code></dt>
+<dd>current day</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool:</code></dt>
+<dd>does the particle die?</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dies(self, day: int) -&gt; bool:
+    &#34;&#34;&#34;Calculates if the particle dies
+
+    Parameters
+    ----------
+    day: int
+        current day
+
+    Returns
+    -------
+    bool:
+        does the particle die?
+    &#34;&#34;&#34;
+    if self.will_die and self.day_death_test != day:
+        self.day_death_test += 1
+        day_of_death = int(
+            int(self.day_of_infection) + int(self.simulation_parameter.get_parameters()[&#39;average_death_time&#39;]))
+        dif = abs(int(day_of_death) - int(day))
+        percentage = get_percentage(dif)
+        if int(day_of_death) + 3 &lt; int(day):
+            self.set_state(ParticleState.DECEASED)
+            return True
+        else:
+            if randint(0, 99) &lt; percentage and dif &lt; 4:
+                self.set_state(ParticleState.DECEASED)
+                return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.get_home_pos"><code class="name flex">
+<span>def <span class="ident">get_home_pos</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the home position</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list:</code></dt>
+<dd>list which contains the home x and y position</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_home_pos(self) -&gt; list:
+    &#34;&#34;&#34;Returns the home position
+
+    Returns
+    -------
+    list:
+        list which contains the home x and y position
+    &#34;&#34;&#34;
+    return [self.home_pos_x, self.home_pos_y]</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.get_in_risk_group"><code class="name flex">
+<span>def <span class="ident">get_in_risk_group</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns if the particle is in the risk group</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool:</code></dt>
+<dd>is the particle in the risk group?</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_in_risk_group(self) -&gt; bool:
+    &#34;&#34;&#34;Returns if the particle is in the risk group
+
+    Returns
+    -------
+    bool:
+        is the particle in the risk group?
+    &#34;&#34;&#34;
+    return self.in_risk_group</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.get_last_collision"><code class="name flex">
+<span>def <span class="ident">get_last_collision</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the particle from the last collision</p>
+<h2 id="returns">Returns</h2>
+<h2 id="particle">Particle</h2>
+<p>particle of the last collision</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_last_collision(self):
+    &#34;&#34;&#34;Returns the particle from the last collision
+
+    Returns
+    -------
+    Particle:
+        particle of the last collision
+    &#34;&#34;&#34;
+    return self.last_collision_with</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.get_pos"><code class="name flex">
+<span>def <span class="ident">get_pos</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the current position</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list:</code></dt>
+<dd>list which contains the current x and y position</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_pos(self) -&gt; list:
+    &#34;&#34;&#34;Returns the current position
+
+    Returns
+    -------
+    list:
+        list which contains the current x and y position
+    &#34;&#34;&#34;
+    return [self.pos_x, self.pos_y]</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.get_quarantine"><code class="name flex">
+<span>def <span class="ident">get_quarantine</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns if the particle is in quarantine</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool:</code></dt>
+<dd>is the particle quarantined?</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_quarantine(self) -&gt; bool:
+    &#34;&#34;&#34;Returns if the particle is in quarantine
+
+    Returns
+    -------
+    bool:
+        is the particle quarantined?
+    &#34;&#34;&#34;
+    return self.quarantine</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.get_state"><code class="name flex">
+<span>def <span class="ident">get_state</span></span>(<span>self) ‑> model.particleState.ParticleState</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the current state of the particle</p>
+<h2 id="returns">Returns</h2>
+<h2 id="particlestate">Particlestate</h2>
+<p>the current state of the particle</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_state(self) -&gt; ParticleState:
+    &#34;&#34;&#34;Returns the current state of the particle
+
+    Returns
+    -------
+    ParticleState:
+        the current state of the particle
+    &#34;&#34;&#34;
+    return self.state</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.init_infectious"><code class="name flex">
+<span>def <span class="ident">init_infectious</span></span>(<span>self, day: int) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Inits the particle as infectious and calculates if he dies, becomes immune or becomes quarantined.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>day</code></strong> :&ensp;<code>int</code></dt>
+<dd>day of infection</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_infectious(self, day: int) -&gt; None:
+    &#34;&#34;&#34;Inits the particle as infectious and calculates if he dies, becomes immune or becomes quarantined.
+
+    Parameters
+    ----------
+    day: int
+        day of infection
+    &#34;&#34;&#34;
+    self.set_state(ParticleState.INFECTIOUS)
+    self.set_will_die(day)
+    self.set_immune()
+    if self.simulation_parameter.get_parameters()[&#39;quarantine&#39;]:
+        self.set_quarantine(True)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.move"><code class="name flex">
+<span>def <span class="ident">move</span></span>(<span>self, speed: float) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Moves the particle if he is not quarantined. Checks also if the particle has to be pushed off</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>speed</code></strong> :&ensp;<code>float</code></dt>
+<dd>speed of the particle</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def move(self, speed: float) -&gt; None:
+    &#34;&#34;&#34;Moves the particle if he is not quarantined. Checks also if the particle has to be pushed off
+
+    Parameters
+    ----------
+    speed: float
+        speed of the particle
+    &#34;&#34;&#34;
+    if not self.quarantine:
+        self.push_off_wall(speed)
+        if self.simulation_parameter.get_parameters()[&#39;lockdown&#39;]:
+            self.push_off_movement_radius()
+        self.pos_x += math.cos(self.direction * math.pi / 180) * speed
+        self.pos_y -= math.sin(self.direction * math.pi / 180) * speed
+
+    if self.counter_lock_change_direction &gt; 0:
+        self.counter_lock_change_direction -= 1
+    elif self.counter_lock_change_direction &lt;= 0:
+        self.last_collision_with = None</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.push_off_movement_radius"><code class="name flex">
+<span>def <span class="ident">push_off_movement_radius</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates of the particle is near the limit of the movement radius and pushes it off</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def push_off_movement_radius(self) -&gt; None:
+    &#34;&#34;&#34; Calculates of the particle is near the limit of the movement radius and pushes it off&#34;&#34;&#34;
+    lockdown_state = self.simulation_parameter.get_parameters()[&#39;lockdown_state&#39;]
+    delta_x = int(abs(self.pos_x - self.home_pos_x))
+    delta_y = int(abs(self.pos_y - self.home_pos_y))
+    radius = self.world_height / lockdown_state
+    if self.world_height &gt; self.world_width:
+        radius = self.world_width / lockdown_state
+    if math.sqrt(delta_x * delta_x + delta_y * delta_y) &gt; radius and self.counter_lock_change_direction &lt;= 0:
+        self.turn_movement_radius(radius, (self.pos_x - self.home_pos_x), (self.pos_y - self.home_pos_y))</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.push_off_wall"><code class="name flex">
+<span>def <span class="ident">push_off_wall</span></span>(<span>self, speed: float) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates of the particle is near a wall and pushes it off otherwise the particle can change its
+direction randomly</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>speed</code></strong> :&ensp;<code>float</code></dt>
+<dd>speed of the particle</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def push_off_wall(self, speed: float) -&gt; None:
+    &#34;&#34;&#34;Calculates of the particle is near a wall and pushes it off otherwise the particle can change its
+    direction randomly
+
+    Parameters
+    ----------
+    speed: float
+        speed of the particle
+
+    &#34;&#34;&#34;
+    dif = 50 + speed * 3
+    if self.pos_y &gt; (self.world_height - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # bottom wall
+        self.direction = self.compute_direction(20, 160)
+    elif self.pos_y &lt; -(self.world_height - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # top wall
+        self.direction = self.compute_direction(200, 340)
+    if self.pos_x &gt; (self.world_width - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # right wall
+        self.direction = self.compute_direction(110, 250)
+    elif self.pos_x &lt; -(self.world_width - DRAW_PARTICLE_RADIUS - speed * 2 - BETTER_WALL_DETECTION):  # left wall
+        self.direction = self.compute_direction(290, 70)
+    if self.counter_lock_change_direction &lt;= 0 \
+            and not self.pos_y &gt; (self.world_height - dif) \
+            and not self.pos_y &lt; -(self.world_height - dif) \
+            and not self.pos_x &gt; (self.world_width - dif) \
+            and not self.pos_x &lt; -(self.world_width - dif):
+        if randint(0, 99) &lt; PARTICLE_PROBABILITY_CHANGE_OF_DIRECTION:
+            self.direction = self.compute_direction(0, 360)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.recovers"><code class="name flex">
+<span>def <span class="ident">recovers</span></span>(<span>self, day: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates if the particle recovers</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>day</code></strong> :&ensp;<code>int</code></dt>
+<dd>current day</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool:</code></dt>
+<dd>does the particle recover?</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def recovers(self, day: int) -&gt; int:
+    &#34;&#34;&#34;Calculates if the particle recovers
+
+    Parameters
+    ----------
+    day: int
+        current day
+
+    Returns
+    -------
+    bool:
+        does the particle recover?
+    &#34;&#34;&#34;
+    if not self.will_die \
+            and (self.state == ParticleState.INFECTED or self.state == ParticleState.INFECTIOUS) \
+            and self.day_heal_test != day:
+        self.day_heal_test += 1
+        simulation_parameters = self.simulation_parameter.get_parameters()
+        genesungstag = int(int(self.day_of_infection) + int(simulation_parameters[&#39;average_recover_time&#39;]))
+        if simulation_parameters[&#39;reinfection_after_recovery&#39;] and self.test_recovered(genesungstag, day):
+            self.set_quarantine(False)
+            if self.is_immune:
+                self.set_state(ParticleState.IMMUNE)
+                return 1
+            else:
+                self.set_state(ParticleState.HEALTHY)
+                return 2
+        elif self.test_recovered(genesungstag, day):
+            self.set_state(ParticleState.IMMUNE)
+            self.set_quarantine(False)
+            return 1
+    return 0</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.set_deceased_state"><code class="name flex">
+<span>def <span class="ident">set_deceased_state</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the current status to deceased</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_deceased_state(self) -&gt; None:
+    &#34;&#34;&#34;Sets the current status to deceased&#34;&#34;&#34;
+    self.state = ParticleState.DECEASED</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.set_immune"><code class="name flex">
+<span>def <span class="ident">set_immune</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates and sets if the particle is immune</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_immune(self) -&gt; None:
+    &#34;&#34;&#34;Calculates and sets if the particle is immune
+    &#34;&#34;&#34;
+    if self.simulation_parameter.get_parameters()[&#39;reinfection_after_recovery&#39;]:
+        if randint(0, 99) &gt; int(self.simulation_parameter.get_parameters()[&#39;reinfection_rate&#39;]):
+            self.is_immune = True
+    else:
+        self.is_immune = True</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.set_immune_state"><code class="name flex">
+<span>def <span class="ident">set_immune_state</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the current status to immune</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_immune_state(self) -&gt; None:
+    &#34;&#34;&#34;Sets the current status to immune&#34;&#34;&#34;
+    self.state = ParticleState.IMMUNE</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.set_quarantine"><code class="name flex">
+<span>def <span class="ident">set_quarantine</span></span>(<span>self, quarantine: bool) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates and sets if the particle will be quarantined</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>quarantine</code></strong> :&ensp;<code>bool</code></dt>
+<dd>will the particle be quarantined</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_quarantine(self, quarantine: bool) -&gt; None:
+    &#34;&#34;&#34;Calculates and sets if the particle will be quarantined
+
+    Parameters
+    ----------
+    quarantine: bool
+        will the particle be quarantined
+
+    &#34;&#34;&#34;
+    if quarantine:
+        if randint(0, 99) &gt; int(self.simulation_parameter.get_parameters()[&#39;quarantine_breakout&#39;]):
+            self.quarantine = True
+    else:
+        self.quarantine = False</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.set_state"><code class="name flex">
+<span>def <span class="ident">set_state</span></span>(<span>self, status: model.particleState.ParticleState) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the current status</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>status</code></strong> :&ensp;<code>ParticleState</code></dt>
+<dd>new state of the particle</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_state(self, status: ParticleState) -&gt; None:
+    &#34;&#34;&#34;Sets the current status
+
+    Parameters
+    ----------
+    status: ParticleState
+        new state of the particle
+    &#34;&#34;&#34;
+    self.state = status</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.set_will_die"><code class="name flex">
+<span>def <span class="ident">set_will_die</span></span>(<span>self, day: int) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates and sets if the particle will die</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>day</code></strong> :&ensp;<code>int</code></dt>
+<dd>current day</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_will_die(self, day: int) -&gt; None:
+    &#34;&#34;&#34;Calculates and sets if the particle will die
+
+    Parameters
+    ----------
+    day: int
+        current day
+
+    &#34;&#34;&#34;
+    simulation_parameter = self.simulation_parameter.get_parameters()
+    if self.in_risk_group:
+        if randint(0, 99) &lt; int(simulation_parameter[&#39;risk_group_death_rate&#39;]):
+            self.will_die = True
+    else:
+        if randint(0, 99) &lt; int(simulation_parameter[&#39;death_rate&#39;]):
+            self.will_die = True
+    self.day_of_infection = day</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.set_world_size"><code class="name flex">
+<span>def <span class="ident">set_world_size</span></span>(<span>self, old_size: dict, new_size: dict) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the world size of the particle to the new size and
+corrects the x and y position relative to the new size</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>old_size</code></strong> :&ensp;<code>dict</code></dt>
+<dd>contains the old width and height of the world</dd>
+<dt><strong><code>new_size</code></strong> :&ensp;<code>dict</code></dt>
+<dd>contains the new width and height of the world</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_world_size(self, old_size: dict, new_size: dict) -&gt; None:
+    &#34;&#34;&#34;Sets the world size of the particle to the new size and
+    corrects the x and y position relative to the new size
+
+    Parameters
+    ----------
+    old_size: dict
+        contains the old width and height of the world
+    new_size: dict
+        contains the new width and height of the world
+    &#34;&#34;&#34;
+
+    if old_size[&#39;width&#39;] != new_size[&#39;width&#39;] and old_size[&#39;width&#39;] &gt; 0:
+        self.pos_x *= new_size[&#39;width&#39;] / old_size[&#39;width&#39;]
+        self.home_pos_x *= new_size[&#39;width&#39;] / old_size[&#39;width&#39;]
+    if old_size[&#39;height&#39;] != new_size[&#39;height&#39;] and old_size[&#39;height&#39;] &gt; 0:
+        self.pos_y *= new_size[&#39;height&#39;] / old_size[&#39;height&#39;]
+        self.home_pos_y *= new_size[&#39;height&#39;] / old_size[&#39;height&#39;]</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.simulate"><code class="name flex">
+<span>def <span class="ident">simulate</span></span>(<span>self, speed: float, day: int) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Simulates a step</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>speed</code></strong> :&ensp;<code>float</code></dt>
+<dd>speed of the particle</dd>
+<dt><strong><code>day</code></strong> :&ensp;<code>int</code></dt>
+<dd>current day</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list:</code></dt>
+<dd>contains the effects that count happened in this step</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def simulate(self, speed: float, day: int) -&gt; list:
+    &#34;&#34;&#34;Simulates a step
+
+    Parameters
+    ----------
+    speed: float
+        speed of the particle
+    day: int
+        current day
+
+    Returns
+    -------
+    list:
+        contains the effects that count happened in this step
+    &#34;&#34;&#34;
+    previous_status = self.state
+    self.move(speed)
+    if self.state == ParticleState.INFECTED or self.state == ParticleState.INFECTIOUS:
+        infectious = self.becomes_infectious(day)
+        deceased = self.dies(day)
+        immune = self.recovers(day)
+        return [infectious, deceased, immune, previous_status]
+    return [False, False, 0, previous_status]</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.test_infection"><code class="name flex">
+<span>def <span class="ident">test_infection</span></span>(<span>self, test_particle) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates if the test particle infects the current particle</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>test_particle</code></strong> :&ensp;<code><a title="Pandemic-Simulator.model.particle.Particle" href="#Pandemic-Simulator.model.particle.Particle">Particle</a></code></dt>
+<dd>particle to test the infection</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool:</code></dt>
+<dd>does the test particle infects the current particle?</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_infection(self, test_particle) -&gt; bool:
+    &#34;&#34;&#34;Calculates if the test particle infects the current particle
+
+    Parameters
+    ----------
+    test_particle: Particle
+        particle to test the infection
+
+    Returns
+    -------
+    bool:
+        does the test particle infects the current particle?
+    &#34;&#34;&#34;
+    if self.state == ParticleState.HEALTHY \
+            and test_particle.get_state() == ParticleState.INFECTIOUS \
+            and not test_particle.quarantine:
+        distance = self.collision_distance(test_particle)
+        if distance &lt; int(self.simulation_parameter.get_parameters()[&#39;infection_radius&#39;]):
+            if randint(0, 99) &lt; int(self.simulation_parameter.get_parameters()[&#39;infection_rate&#39;]):
+                return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.test_recovered"><code class="name flex">
+<span>def <span class="ident">test_recovered</span></span>(<span>self, day_of_recovery: int, day: int) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tests if the particle recovers</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>day_of_recovery</code></strong> :&ensp;<code>int</code></dt>
+<dd>day when the particle will recover average</dd>
+<dt><strong><code>day</code></strong> :&ensp;<code>int</code></dt>
+<dd>current day</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool:</code></dt>
+<dd>does the particle recover today</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_recovered(self, day_of_recovery: int, day: int) -&gt; bool:
+    &#34;&#34;&#34; Tests if the particle recovers
+
+    Parameters
+    ----------
+    day_of_recovery: int
+        day when the particle will recover average
+    day: int
+        current day
+
+    Returns
+    -------
+    bool:
+        does the particle recover today
+    &#34;&#34;&#34;
+    dif = abs(int(day_of_recovery) - int(day))
+    percentage = get_percentage(dif)
+    if randint(0, 99) &lt; percentage and dif &lt; 4:
+        return True
+    elif int(day_of_recovery) + 3 &lt; int(day):
+        return True
+    else:
+        return False</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.test_risk_group"><code class="name flex">
+<span>def <span class="ident">test_risk_group</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates if the particle is in the risk group</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool:</code></dt>
+<dd>is the particle in the risk group?</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_risk_group(self) -&gt; bool:
+    &#34;&#34;&#34;Calculates if the particle is in the risk group
+
+    Returns
+    -------
+    bool:
+        is the particle in the risk group?
+    &#34;&#34;&#34;
+    simulation_parameters = self.simulation_parameter.get_parameters()
+    if simulation_parameters[&#39;risk_group&#39;] \
+            and int(simulation_parameters[&#39;risk_group_age&#39;][&#39;min&#39;]) &lt;= self.age &lt;= \
+            int(simulation_parameters[&#39;risk_group_age&#39;][&#39;max&#39;]):
+        return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.model.particle.Particle.turn_movement_radius"><code class="name flex">
+<span>def <span class="ident">turn_movement_radius</span></span>(<span>self, radius: float, delta_x: float, delta_y: float) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the direction if the particle collides with the movement radius</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>radius</code></strong> :&ensp;<code>float</code></dt>
+<dd>movement radius</dd>
+<dt><strong><code>delta_x</code></strong> :&ensp;<code>float</code></dt>
+<dd>difference between the current and the home position in the x dimension</dd>
+<dt><strong><code>delta_y</code></strong> :&ensp;<code>float</code></dt>
+<dd>difference between the current and the home position in the y dimension</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def turn_movement_radius(self, radius: float, delta_x: float, delta_y: float) -&gt; None:
+    &#34;&#34;&#34;Sets the direction if the particle collides with the movement radius
+
+    Parameters
+    ----------
+    radius: float
+        movement radius
+    delta_x: float
+        difference between the current and the home position in the x dimension
+    delta_y: float
+        difference between the current and the home position in the y dimension
+    &#34;&#34;&#34;
+    if delta_y &lt; -radius + 15:  # top wall
+        self.direction = self.compute_direction(220, 320)
+    elif delta_y &gt; radius - 15:  # bottom wall
+        self.direction = self.compute_direction(40, 140)
+    elif delta_x &gt; radius - 15:  # right wall
+        self.direction = self.compute_direction(140, 220)
+    elif delta_x &lt; -radius + 15:  # left wall
+        self.direction = self.compute_direction(310, 50)
+    self.counter_lock_change_direction = \
+        PARTICLE_TIME_DISABLE_CHANGE_OF_DIRECTION / self.simulation_parameter.get_parameters()[&#39;simulation_speed&#39;]</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Pandemic-Simulator.model" href="index.html">Pandemic-Simulator.model</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="Pandemic-Simulator.model.particle.getrandbits" href="#Pandemic-Simulator.model.particle.getrandbits">getrandbits</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.random" href="#Pandemic-Simulator.model.particle.random">random</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Pandemic-Simulator.model.particle.Particle" href="#Pandemic-Simulator.model.particle.Particle">Particle</a></code></h4>
+<ul class="">
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.becomes_infected" href="#Pandemic-Simulator.model.particle.Particle.becomes_infected">becomes_infected</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.becomes_infectious" href="#Pandemic-Simulator.model.particle.Particle.becomes_infectious">becomes_infectious</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.collision" href="#Pandemic-Simulator.model.particle.Particle.collision">collision</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.collision_distance" href="#Pandemic-Simulator.model.particle.Particle.collision_distance">collision_distance</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.collision_test" href="#Pandemic-Simulator.model.particle.Particle.collision_test">collision_test</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.compute_direction" href="#Pandemic-Simulator.model.particle.Particle.compute_direction">compute_direction</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.dies" href="#Pandemic-Simulator.model.particle.Particle.dies">dies</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.get_home_pos" href="#Pandemic-Simulator.model.particle.Particle.get_home_pos">get_home_pos</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.get_in_risk_group" href="#Pandemic-Simulator.model.particle.Particle.get_in_risk_group">get_in_risk_group</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.get_last_collision" href="#Pandemic-Simulator.model.particle.Particle.get_last_collision">get_last_collision</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.get_pos" href="#Pandemic-Simulator.model.particle.Particle.get_pos">get_pos</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.get_quarantine" href="#Pandemic-Simulator.model.particle.Particle.get_quarantine">get_quarantine</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.get_state" href="#Pandemic-Simulator.model.particle.Particle.get_state">get_state</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.init_infectious" href="#Pandemic-Simulator.model.particle.Particle.init_infectious">init_infectious</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.move" href="#Pandemic-Simulator.model.particle.Particle.move">move</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.push_off_movement_radius" href="#Pandemic-Simulator.model.particle.Particle.push_off_movement_radius">push_off_movement_radius</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.push_off_wall" href="#Pandemic-Simulator.model.particle.Particle.push_off_wall">push_off_wall</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.recovers" href="#Pandemic-Simulator.model.particle.Particle.recovers">recovers</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.set_deceased_state" href="#Pandemic-Simulator.model.particle.Particle.set_deceased_state">set_deceased_state</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.set_immune" href="#Pandemic-Simulator.model.particle.Particle.set_immune">set_immune</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.set_immune_state" href="#Pandemic-Simulator.model.particle.Particle.set_immune_state">set_immune_state</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.set_quarantine" href="#Pandemic-Simulator.model.particle.Particle.set_quarantine">set_quarantine</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.set_state" href="#Pandemic-Simulator.model.particle.Particle.set_state">set_state</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.set_will_die" href="#Pandemic-Simulator.model.particle.Particle.set_will_die">set_will_die</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.set_world_size" href="#Pandemic-Simulator.model.particle.Particle.set_world_size">set_world_size</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.simulate" href="#Pandemic-Simulator.model.particle.Particle.simulate">simulate</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.test_infection" href="#Pandemic-Simulator.model.particle.Particle.test_infection">test_infection</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.test_recovered" href="#Pandemic-Simulator.model.particle.Particle.test_recovered">test_recovered</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.test_risk_group" href="#Pandemic-Simulator.model.particle.Particle.test_risk_group">test_risk_group</a></code></li>
+<li><code><a title="Pandemic-Simulator.model.particle.Particle.turn_movement_radius" href="#Pandemic-Simulator.model.particle.Particle.turn_movement_radius">turn_movement_radius</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

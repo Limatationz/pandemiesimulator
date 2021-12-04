@@ -1,0 +1,1282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>Pandemic-Simulator.view.rangeSlider API documentation</title>
+<meta name="description" content="Element of the view.
+Contains the RangeSlider class.
+Creates an range slider instead of a slider.
+Source: …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Pandemic-Simulator.view.rangeSlider</code></h1>
+</header>
+<section id="section-intro">
+<p>Element of the view.
+Contains the RangeSlider class.
+Creates an range slider instead of a slider.
+Source: <a href="https://gist.githubusercontent.com/nicoddemus/e84fa38ab3ad26a20491806eecec5338/raw/f40139f492183abda0661d6cb77fc564cad0f599/range_slider.py">https://gist.githubusercontent.com/nicoddemus/e84fa38ab3ad26a20491806eecec5338/raw/f40139f492183abda0661d6cb77fc564cad0f599/range_slider.py</a></p>
+<p>Verbatim translation of the RangeSlider class from:</p>
+<p><a href="https://github.com/ThisIsClark/Qt-RangeSlider/tree/b3e381fd383aa5b02e78caff9a42fc5f4aab63e6">https://github.com/ThisIsClark/Qt-RangeSlider/tree/b3e381fd383aa5b02e78caff9a42fc5f4aab63e6</a></p>
+<p>This is a verbatim translation, without any improvements that could be
+made to the code, such as using max()/min() in a few places, interval comparisons
+(<code>0 &lt; x &lt; 10</code> instead of <code>x &gt; 0 and x &lt; 10</code>), etc.</p>
+<p>The intent is to keep it as close as the original as possible in case we want
+to port bugs upstream or downstream.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+    Element of the view.
+    Contains the RangeSlider class.
+    Creates an range slider instead of a slider.
+    Source: https://gist.githubusercontent.com/nicoddemus/e84fa38ab3ad26a20491806eecec5338/raw/f40139f492183abda0661d6cb77fc564cad0f599/range_slider.py
+
+    Verbatim translation of the RangeSlider class from:
+
+    https://github.com/ThisIsClark/Qt-RangeSlider/tree/b3e381fd383aa5b02e78caff9a42fc5f4aab63e6
+
+    This is a verbatim translation, without any improvements that could be
+    made to the code, such as using max()/min() in a few places, interval comparisons
+    (`0 &lt; x &lt; 10` instead of `x &gt; 0 and x &lt; 10`), etc.
+
+    The intent is to keep it as close as the original as possible in case we want
+    to port bugs upstream or downstream.
+&#34;&#34;&#34;
+from enum import auto, Flag
+
+from PyQt5 import QtGui, QtCore
+from PyQt5 import QtWidgets
+from PyQt5.QtCore import QRectF
+from PyQt5.QtGui import QPen
+
+scHandleSideLength = 13
+scSliderBarHeight = 5
+scLeftRightMargin = 1
+
+
+class RangeSlider(QtWidgets.QWidget):
+    &#34;&#34;&#34;
+    Implements a Range slider: a control which defines a (min, max) integer interval,
+    being displayed as two slider handles for each end.
+    &#34;&#34;&#34;
+
+    lowerValueChanged = QtCore.pyqtSignal(int)
+    upperValueChanged = QtCore.pyqtSignal(int)
+    valueChanged = QtCore.pyqtSignal(int, int)
+    rangeChanged = QtCore.pyqtSignal(int, int)
+
+    class Option(Flag):
+        NoHandle = auto()
+        LeftHandle = auto()
+        RightHandle = auto()
+        DoubleHandles = LeftHandle | RightHandle
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.mMinimum = 0
+        self.mMaximum = 100
+        self.mLowerValue = 0
+        self.mUpperValue = 100
+        self.mFirstHandlePressed = False
+        self.mSecondHandlePressed = False
+        self.mInterval = self.mMaximum - self.mMinimum
+        self.mBackgroudColorEnabled = QtGui.QColor(&#39;#2faeec&#39;)
+        self.mBackgroudColorDisabled = QtGui.QColor(&#39;#2faeec&#39;)
+        self.mBackgroudColor = self.mBackgroudColorEnabled
+        self.mFirstHandleBorderColor = QtGui.QColor(&#39;#626568&#39;)
+        self.mSecondHandleBorderColor = QtGui.QColor(&#39;#626568&#39;)
+        self.orientation = QtCore.Qt.Horizontal
+        self.type = self.Option.DoubleHandles
+
+        self.setMouseTracking(True)
+
+    def paintEvent(self, aEvent: QtGui.QPaintEvent) -&gt; None:
+        painter = QtGui.QPainter(self)
+
+        # Background
+        if self.orientation == QtCore.Qt.Horizontal:
+            backgroundRect = QRectF(scLeftRightMargin, (self.height() - scSliderBarHeight) / 2,
+                                    self.width() - scLeftRightMargin * 2, scSliderBarHeight)
+        else:
+            backgroundRect = QRectF((self.width() - scSliderBarHeight) / 2, scLeftRightMargin, scSliderBarHeight,
+                                    self.height() - scLeftRightMargin * 2)
+
+        pen = QPen(QtGui.QColor(&#39;#626568&#39;), 0.1)
+        painter.setPen(pen)
+        painter.setRenderHint(QtGui.QPainter.Qt4CompatiblePainting)
+        backgroundBrush = QtGui.QBrush(QtGui.QColor(&#39;#626568&#39;))
+        painter.setBrush(backgroundBrush)
+        painter.drawRoundedRect(backgroundRect, 2, 2)
+
+        # First value handle rect
+
+        pen.setColor(QtCore.Qt.darkGray)
+        pen.setWidth(0.5)
+        painter.setPen(pen)
+        painter.setRenderHint(QtGui.QPainter.Antialiasing)
+        handleBrush = QtGui.QBrush(QtGui.QColor(&#39;#232629&#39;))
+        painter.setBrush(handleBrush)
+        pen.setColor(self.mFirstHandleBorderColor)
+        painter.setPen(pen)
+        leftHandleRect = self.firstHandleRect()
+        if self.Option.LeftHandle in self.type:
+            painter.drawRoundedRect(leftHandleRect, 10, 10)
+        # Second value handle rect
+        pen.setColor(self.mSecondHandleBorderColor)
+        painter.setPen(pen)
+        rightHandleRect = self.secondHandleRect()
+        if self.Option.RightHandle in self.type:
+            painter.drawRoundedRect(rightHandleRect, 10, 10)
+
+        # Handles
+        pen.setColor(QtGui.QColor(&#39;#3daee9&#39;))
+        painter.setPen(pen)
+        painter.setRenderHint(QtGui.QPainter.Antialiasing, False)
+        selectedRect = QtCore.QRectF(backgroundRect)
+        if self.orientation == QtCore.Qt.Horizontal:
+            selectedRect.setLeft(
+                (leftHandleRect.right() if self.Option.LeftHandle in self.type else leftHandleRect.left()) + 0.5)
+            selectedRect.setRight(
+                (rightHandleRect.left() if self.Option.RightHandle in self.type else rightHandleRect.right()) - 0.5)
+        else:
+            selectedRect.setTop(
+                (leftHandleRect.bottom() if self.Option.LeftHandle in self.type else leftHandleRect.top()) + 0.5)
+            selectedRect.setBottom(
+                (rightHandleRect.top() if self.Option.RightHandle in self.type else rightHandleRect.bottom()) - 0.5)
+
+        selectedBrush = QtGui.QBrush(self.mBackgroudColor)
+        painter.setBrush(selectedBrush)
+        painter.drawRect(selectedRect)
+
+    def firstHandleRect(self) -&gt; QtCore.QRectF:
+        percentage = (self.mLowerValue - self.mMinimum) * 1.0 / self.mInterval
+        return self.handleRect(percentage * self.validLength() + scLeftRightMargin)
+
+    def secondHandleRect(self) -&gt; QtCore.QRectF:
+        percentage = (self.mUpperValue - self.mMinimum) * 1.0 / self.mInterval
+        return self.handleRect(percentage * self.validLength() + scLeftRightMargin + (
+            scHandleSideLength if self.Option.LeftHandle in self.type else 0))
+
+    def handleRect(self, aValue: float) -&gt; QtCore.QRectF:
+        aValue = int(aValue)
+        if self.orientation == QtCore.Qt.Horizontal:
+            return QtCore.QRect(aValue, (self.height() - scHandleSideLength) // 2,
+                                scHandleSideLength, scHandleSideLength)
+        else:
+            return QtCore.QRect((self.width() - scHandleSideLength) // 2, aValue,
+                                scHandleSideLength, scHandleSideLength)
+
+    def mousePressEvent(self, aEvent: QtGui.QMouseEvent) -&gt; None:
+        if aEvent.buttons() &amp; QtCore.Qt.LeftButton:
+            posCheck = aEvent.pos().y() if self.orientation == QtCore.Qt.Horizontal else aEvent.pos().x()
+            posMax = self.height() if self.orientation == QtCore.Qt.Horizontal else self.width()
+            posValue = aEvent.pos().x() if self.orientation == QtCore.Qt.Horizontal else aEvent.pos().y()
+            firstHandleRectPosValue = self.firstHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.firstHandleRect().y()
+            secondHandleRectPosValue = self.secondHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.secondHandleRect().y()
+
+            self.mSecondHandlePressed = self.secondHandleRect().contains(aEvent.pos())
+            self.mFirstHandlePressed = not self.mSecondHandlePressed and self.firstHandleRect().contains(aEvent.pos())
+
+            if self.mFirstHandlePressed:
+                self.mDelta = posValue - (firstHandleRectPosValue + scHandleSideLength / 2)
+                self.mFirstHandleBorderColor = QtGui.QColor(&#39;#3daee9&#39;)
+
+            elif self.mSecondHandlePressed:
+                self.mDelta = posValue - (secondHandleRectPosValue + scHandleSideLength / 2)
+                self.mSecondHandleBorderColor = QtGui.QColor(&#39;#3daee9&#39;)
+
+            elif posCheck &gt;= 2 and posCheck &lt;= posMax - 2:
+                step = 1 if self.mInterval // 10 &lt; 1 else self.mInterval // 10
+                if posValue &lt; firstHandleRectPosValue:
+                    self.setLowerValue(self.mLowerValue - step)
+                elif posValue &gt; secondHandleRectPosValue + scHandleSideLength:
+                    self.setUpperValue(self.mUpperValue + step)
+                elif ((
+                              posValue &gt; firstHandleRectPosValue + scHandleSideLength) or self.Option.LeftHandle not in self.type
+                      and ((posValue &lt; secondHandleRectPosValue) or self.Option.RightHandle not in self.type)):
+                    if self.Option.DoubleHandles in self.type:
+                        if (posValue - (firstHandleRectPosValue + scHandleSideLength) &lt;
+                                (secondHandleRectPosValue - (firstHandleRectPosValue + scHandleSideLength)) // 2):
+                            self.setLowerValue(self.mLowerValue + step if (
+                                    self.mLowerValue + step &lt; self.mUpperValue) else self.mUpperValue)
+                        else:
+                            self.setUpperValue(self.mUpperValue - step if (
+                                    self.mUpperValue - step &gt; self.mLowerValue) else self.mLowerValue)
+                    elif self.Option.LeftHandle in self.type:
+                        self.setLowerValue(self.mLowerValue + step if (
+                                self.mLowerValue + step &lt; self.mUpperValue) else self.mUpperValue)
+                    elif self.Option.RightHandle in self.type:
+                        self.setUpperValue(self.mUpperValue - step if (
+                                self.mUpperValue - step &gt; self.mLowerValue) else self.mLowerValue)
+
+    def mouseMoveEvent(self, aEvent: QtGui.QMouseEvent):
+        if aEvent.buttons() &amp; QtCore.Qt.LeftButton:
+            posValue = aEvent.pos().x() if self.orientation == QtCore.Qt.Horizontal else aEvent.pos().y()
+            firstHandleRectPosValue = self.firstHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.firstHandleRect().y()
+            secondHandleRectPosValue = self.secondHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.secondHandleRect().y()
+
+            if self.mFirstHandlePressed and self.Option.LeftHandle in self.type:
+
+                if posValue - self.mDelta + scHandleSideLength / 2 &lt;= secondHandleRectPosValue:
+                    self.setLowerValue((
+                                               posValue - self.mDelta - scLeftRightMargin - scHandleSideLength / 2) * 1.0 / self.validLength() * self.mInterval + self.mMinimum)
+                else:
+                    self.setLowerValue(self.mUpperValue)
+            elif (self.mSecondHandlePressed and self.Option.RightHandle in self.type):
+                if (firstHandleRectPosValue + scHandleSideLength * (
+                        1.5 if self.Option.DoubleHandles in self.type else 0.5) &lt;= posValue - self.mDelta):
+                    self.setUpperValue((posValue - self.mDelta - scLeftRightMargin - scHandleSideLength / 2 - (
+                        scHandleSideLength if self.Option.DoubleHandles in self.type else 0)) * 1.0 / self.validLength() * self.mInterval + self.mMinimum)
+                else:
+                    self.setUpperValue(self.mLowerValue)
+
+    def mouseReleaseEvent(self, aEvent: QtGui.QMouseEvent):
+        self.mFirstHandlePressed = False
+        self.mSecondHandlePressed = False
+        self.mFirstHandleBorderColor = QtGui.QColor(&#39;#626568&#39;)
+        self.mSecondHandleBorderColor = QtGui.QColor(&#39;#626568&#39;)
+
+    def changeEvent(self, aEvent: QtCore.QEvent):
+
+        if aEvent.type() == QtCore.QEvent.EnabledChange:
+            if self.isEnabled():
+                self.mBackgroudColor = self.mBackgroudColorEnabled
+            else:
+                self.mBackgroudColor = self.mBackgroudColorDisabled
+            self.update()
+
+    def minimumSizeHint(self) -&gt; QtCore.QSize:
+        return QtCore.QSize(scHandleSideLength * 2 + scLeftRightMargin * 2, scHandleSideLength)
+
+    def GetMinimum(self) -&gt; int:
+        return self.mMinimum
+
+    def SetMinimum(self, aMinimum: int):
+        self.setMinimum(aMinimum)
+
+    def GetMaximum(self) -&gt; int:
+        return self.mMaximum
+
+    def SetMaximum(self, aMaximum: int):
+        self.setMaximum(aMaximum)
+
+    def GetLowerValue(self) -&gt; int:
+        return int(self.mLowerValue)
+
+    def SetLowerValue(self, aLowerValue: int):
+        self.setLowerValue(aLowerValue)
+
+    def GetUpperValue(self) -&gt; int:
+        return int(self.mUpperValue)
+
+    def SetUpperValue(self, aUpperValue: int):
+        self.setUpperValue(aUpperValue)
+
+    def setLowerValue(self, aLowerValue: int):
+        if aLowerValue &gt; self.mMaximum:
+            aLowerValue = self.mMaximum
+
+        if aLowerValue &lt; self.mMinimum:
+            aLowerValue = self.mMinimum
+
+        self.mLowerValue = aLowerValue
+        self.lowerValueChanged.emit(self.mLowerValue)
+        self.valueChanged.emit(self.mLowerValue, self.mUpperValue)
+
+        self.update()
+
+    def setUpperValue(self, aUpperValue: int):
+        if aUpperValue &gt; self.mMaximum:
+            aUpperValue = self.mMaximum
+
+        if aUpperValue &lt; self.mMinimum:
+            aUpperValue = self.mMinimum
+
+        self.mUpperValue = aUpperValue
+        self.upperValueChanged.emit(self.mUpperValue)
+        self.valueChanged.emit(self.mLowerValue, self.mUpperValue)
+
+        self.update()
+
+    def setMinimum(self, aMinimum: int):
+        if aMinimum &lt;= self.mMaximum:
+            self.mMinimum = aMinimum
+        else:
+            oldMax = self.mMaximum
+            self.mMinimum = oldMax
+            self.mMaximum = aMinimum
+        self.mInterval = self.mMaximum - self.mMinimum
+        self.update()
+
+        self.setLowerValue(self.mMinimum)
+        self.setUpperValue(self.mMaximum)
+
+        self.rangeChanged.emit(self.mMinimum, self.mMaximum)
+
+    def setMaximum(self, aMaximum: int):
+        if (aMaximum &gt;= self.mMinimum):
+            self.mMaximum = aMaximum
+        else:
+            oldMin = self.mMinimum
+            self.mMaximum = oldMin
+            self.mMinimum = aMaximum
+
+        self.mInterval = self.mMaximum - self.mMinimum
+        self.update()
+
+        self.setLowerValue(self.mMinimum)
+        self.setUpperValue(self.mMaximum)
+
+        self.rangeChanged.emit(self.mMinimum, self.mMaximum)
+
+    def validLength(self) -&gt; int:
+        len = self.width() if self.orientation == QtCore.Qt.Horizontal else self.height()
+        return len - scLeftRightMargin * 2 - scHandleSideLength * (
+            2 if self.type.DoubleHandles in self.type else 1)
+
+    def SetRange(self, aMinimum: int, aMaximum: int):
+        self.setMinimum(aMinimum)
+        self.setMaximum(aMaximum)
+
+    def setOrientation(self, orientation):
+        self.orientation = orientation
+
+    def setTickPosition(self, ticks):
+        a = 5</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider"><code class="flex name class">
+<span>class <span class="ident">RangeSlider</span></span>
+<span>(</span><span>parent=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Implements a Range slider: a control which defines a (min, max) integer interval,
+being displayed as two slider handles for each end.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RangeSlider(QtWidgets.QWidget):
+    &#34;&#34;&#34;
+    Implements a Range slider: a control which defines a (min, max) integer interval,
+    being displayed as two slider handles for each end.
+    &#34;&#34;&#34;
+
+    lowerValueChanged = QtCore.pyqtSignal(int)
+    upperValueChanged = QtCore.pyqtSignal(int)
+    valueChanged = QtCore.pyqtSignal(int, int)
+    rangeChanged = QtCore.pyqtSignal(int, int)
+
+    class Option(Flag):
+        NoHandle = auto()
+        LeftHandle = auto()
+        RightHandle = auto()
+        DoubleHandles = LeftHandle | RightHandle
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.mMinimum = 0
+        self.mMaximum = 100
+        self.mLowerValue = 0
+        self.mUpperValue = 100
+        self.mFirstHandlePressed = False
+        self.mSecondHandlePressed = False
+        self.mInterval = self.mMaximum - self.mMinimum
+        self.mBackgroudColorEnabled = QtGui.QColor(&#39;#2faeec&#39;)
+        self.mBackgroudColorDisabled = QtGui.QColor(&#39;#2faeec&#39;)
+        self.mBackgroudColor = self.mBackgroudColorEnabled
+        self.mFirstHandleBorderColor = QtGui.QColor(&#39;#626568&#39;)
+        self.mSecondHandleBorderColor = QtGui.QColor(&#39;#626568&#39;)
+        self.orientation = QtCore.Qt.Horizontal
+        self.type = self.Option.DoubleHandles
+
+        self.setMouseTracking(True)
+
+    def paintEvent(self, aEvent: QtGui.QPaintEvent) -&gt; None:
+        painter = QtGui.QPainter(self)
+
+        # Background
+        if self.orientation == QtCore.Qt.Horizontal:
+            backgroundRect = QRectF(scLeftRightMargin, (self.height() - scSliderBarHeight) / 2,
+                                    self.width() - scLeftRightMargin * 2, scSliderBarHeight)
+        else:
+            backgroundRect = QRectF((self.width() - scSliderBarHeight) / 2, scLeftRightMargin, scSliderBarHeight,
+                                    self.height() - scLeftRightMargin * 2)
+
+        pen = QPen(QtGui.QColor(&#39;#626568&#39;), 0.1)
+        painter.setPen(pen)
+        painter.setRenderHint(QtGui.QPainter.Qt4CompatiblePainting)
+        backgroundBrush = QtGui.QBrush(QtGui.QColor(&#39;#626568&#39;))
+        painter.setBrush(backgroundBrush)
+        painter.drawRoundedRect(backgroundRect, 2, 2)
+
+        # First value handle rect
+
+        pen.setColor(QtCore.Qt.darkGray)
+        pen.setWidth(0.5)
+        painter.setPen(pen)
+        painter.setRenderHint(QtGui.QPainter.Antialiasing)
+        handleBrush = QtGui.QBrush(QtGui.QColor(&#39;#232629&#39;))
+        painter.setBrush(handleBrush)
+        pen.setColor(self.mFirstHandleBorderColor)
+        painter.setPen(pen)
+        leftHandleRect = self.firstHandleRect()
+        if self.Option.LeftHandle in self.type:
+            painter.drawRoundedRect(leftHandleRect, 10, 10)
+        # Second value handle rect
+        pen.setColor(self.mSecondHandleBorderColor)
+        painter.setPen(pen)
+        rightHandleRect = self.secondHandleRect()
+        if self.Option.RightHandle in self.type:
+            painter.drawRoundedRect(rightHandleRect, 10, 10)
+
+        # Handles
+        pen.setColor(QtGui.QColor(&#39;#3daee9&#39;))
+        painter.setPen(pen)
+        painter.setRenderHint(QtGui.QPainter.Antialiasing, False)
+        selectedRect = QtCore.QRectF(backgroundRect)
+        if self.orientation == QtCore.Qt.Horizontal:
+            selectedRect.setLeft(
+                (leftHandleRect.right() if self.Option.LeftHandle in self.type else leftHandleRect.left()) + 0.5)
+            selectedRect.setRight(
+                (rightHandleRect.left() if self.Option.RightHandle in self.type else rightHandleRect.right()) - 0.5)
+        else:
+            selectedRect.setTop(
+                (leftHandleRect.bottom() if self.Option.LeftHandle in self.type else leftHandleRect.top()) + 0.5)
+            selectedRect.setBottom(
+                (rightHandleRect.top() if self.Option.RightHandle in self.type else rightHandleRect.bottom()) - 0.5)
+
+        selectedBrush = QtGui.QBrush(self.mBackgroudColor)
+        painter.setBrush(selectedBrush)
+        painter.drawRect(selectedRect)
+
+    def firstHandleRect(self) -&gt; QtCore.QRectF:
+        percentage = (self.mLowerValue - self.mMinimum) * 1.0 / self.mInterval
+        return self.handleRect(percentage * self.validLength() + scLeftRightMargin)
+
+    def secondHandleRect(self) -&gt; QtCore.QRectF:
+        percentage = (self.mUpperValue - self.mMinimum) * 1.0 / self.mInterval
+        return self.handleRect(percentage * self.validLength() + scLeftRightMargin + (
+            scHandleSideLength if self.Option.LeftHandle in self.type else 0))
+
+    def handleRect(self, aValue: float) -&gt; QtCore.QRectF:
+        aValue = int(aValue)
+        if self.orientation == QtCore.Qt.Horizontal:
+            return QtCore.QRect(aValue, (self.height() - scHandleSideLength) // 2,
+                                scHandleSideLength, scHandleSideLength)
+        else:
+            return QtCore.QRect((self.width() - scHandleSideLength) // 2, aValue,
+                                scHandleSideLength, scHandleSideLength)
+
+    def mousePressEvent(self, aEvent: QtGui.QMouseEvent) -&gt; None:
+        if aEvent.buttons() &amp; QtCore.Qt.LeftButton:
+            posCheck = aEvent.pos().y() if self.orientation == QtCore.Qt.Horizontal else aEvent.pos().x()
+            posMax = self.height() if self.orientation == QtCore.Qt.Horizontal else self.width()
+            posValue = aEvent.pos().x() if self.orientation == QtCore.Qt.Horizontal else aEvent.pos().y()
+            firstHandleRectPosValue = self.firstHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.firstHandleRect().y()
+            secondHandleRectPosValue = self.secondHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.secondHandleRect().y()
+
+            self.mSecondHandlePressed = self.secondHandleRect().contains(aEvent.pos())
+            self.mFirstHandlePressed = not self.mSecondHandlePressed and self.firstHandleRect().contains(aEvent.pos())
+
+            if self.mFirstHandlePressed:
+                self.mDelta = posValue - (firstHandleRectPosValue + scHandleSideLength / 2)
+                self.mFirstHandleBorderColor = QtGui.QColor(&#39;#3daee9&#39;)
+
+            elif self.mSecondHandlePressed:
+                self.mDelta = posValue - (secondHandleRectPosValue + scHandleSideLength / 2)
+                self.mSecondHandleBorderColor = QtGui.QColor(&#39;#3daee9&#39;)
+
+            elif posCheck &gt;= 2 and posCheck &lt;= posMax - 2:
+                step = 1 if self.mInterval // 10 &lt; 1 else self.mInterval // 10
+                if posValue &lt; firstHandleRectPosValue:
+                    self.setLowerValue(self.mLowerValue - step)
+                elif posValue &gt; secondHandleRectPosValue + scHandleSideLength:
+                    self.setUpperValue(self.mUpperValue + step)
+                elif ((
+                              posValue &gt; firstHandleRectPosValue + scHandleSideLength) or self.Option.LeftHandle not in self.type
+                      and ((posValue &lt; secondHandleRectPosValue) or self.Option.RightHandle not in self.type)):
+                    if self.Option.DoubleHandles in self.type:
+                        if (posValue - (firstHandleRectPosValue + scHandleSideLength) &lt;
+                                (secondHandleRectPosValue - (firstHandleRectPosValue + scHandleSideLength)) // 2):
+                            self.setLowerValue(self.mLowerValue + step if (
+                                    self.mLowerValue + step &lt; self.mUpperValue) else self.mUpperValue)
+                        else:
+                            self.setUpperValue(self.mUpperValue - step if (
+                                    self.mUpperValue - step &gt; self.mLowerValue) else self.mLowerValue)
+                    elif self.Option.LeftHandle in self.type:
+                        self.setLowerValue(self.mLowerValue + step if (
+                                self.mLowerValue + step &lt; self.mUpperValue) else self.mUpperValue)
+                    elif self.Option.RightHandle in self.type:
+                        self.setUpperValue(self.mUpperValue - step if (
+                                self.mUpperValue - step &gt; self.mLowerValue) else self.mLowerValue)
+
+    def mouseMoveEvent(self, aEvent: QtGui.QMouseEvent):
+        if aEvent.buttons() &amp; QtCore.Qt.LeftButton:
+            posValue = aEvent.pos().x() if self.orientation == QtCore.Qt.Horizontal else aEvent.pos().y()
+            firstHandleRectPosValue = self.firstHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.firstHandleRect().y()
+            secondHandleRectPosValue = self.secondHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.secondHandleRect().y()
+
+            if self.mFirstHandlePressed and self.Option.LeftHandle in self.type:
+
+                if posValue - self.mDelta + scHandleSideLength / 2 &lt;= secondHandleRectPosValue:
+                    self.setLowerValue((
+                                               posValue - self.mDelta - scLeftRightMargin - scHandleSideLength / 2) * 1.0 / self.validLength() * self.mInterval + self.mMinimum)
+                else:
+                    self.setLowerValue(self.mUpperValue)
+            elif (self.mSecondHandlePressed and self.Option.RightHandle in self.type):
+                if (firstHandleRectPosValue + scHandleSideLength * (
+                        1.5 if self.Option.DoubleHandles in self.type else 0.5) &lt;= posValue - self.mDelta):
+                    self.setUpperValue((posValue - self.mDelta - scLeftRightMargin - scHandleSideLength / 2 - (
+                        scHandleSideLength if self.Option.DoubleHandles in self.type else 0)) * 1.0 / self.validLength() * self.mInterval + self.mMinimum)
+                else:
+                    self.setUpperValue(self.mLowerValue)
+
+    def mouseReleaseEvent(self, aEvent: QtGui.QMouseEvent):
+        self.mFirstHandlePressed = False
+        self.mSecondHandlePressed = False
+        self.mFirstHandleBorderColor = QtGui.QColor(&#39;#626568&#39;)
+        self.mSecondHandleBorderColor = QtGui.QColor(&#39;#626568&#39;)
+
+    def changeEvent(self, aEvent: QtCore.QEvent):
+
+        if aEvent.type() == QtCore.QEvent.EnabledChange:
+            if self.isEnabled():
+                self.mBackgroudColor = self.mBackgroudColorEnabled
+            else:
+                self.mBackgroudColor = self.mBackgroudColorDisabled
+            self.update()
+
+    def minimumSizeHint(self) -&gt; QtCore.QSize:
+        return QtCore.QSize(scHandleSideLength * 2 + scLeftRightMargin * 2, scHandleSideLength)
+
+    def GetMinimum(self) -&gt; int:
+        return self.mMinimum
+
+    def SetMinimum(self, aMinimum: int):
+        self.setMinimum(aMinimum)
+
+    def GetMaximum(self) -&gt; int:
+        return self.mMaximum
+
+    def SetMaximum(self, aMaximum: int):
+        self.setMaximum(aMaximum)
+
+    def GetLowerValue(self) -&gt; int:
+        return int(self.mLowerValue)
+
+    def SetLowerValue(self, aLowerValue: int):
+        self.setLowerValue(aLowerValue)
+
+    def GetUpperValue(self) -&gt; int:
+        return int(self.mUpperValue)
+
+    def SetUpperValue(self, aUpperValue: int):
+        self.setUpperValue(aUpperValue)
+
+    def setLowerValue(self, aLowerValue: int):
+        if aLowerValue &gt; self.mMaximum:
+            aLowerValue = self.mMaximum
+
+        if aLowerValue &lt; self.mMinimum:
+            aLowerValue = self.mMinimum
+
+        self.mLowerValue = aLowerValue
+        self.lowerValueChanged.emit(self.mLowerValue)
+        self.valueChanged.emit(self.mLowerValue, self.mUpperValue)
+
+        self.update()
+
+    def setUpperValue(self, aUpperValue: int):
+        if aUpperValue &gt; self.mMaximum:
+            aUpperValue = self.mMaximum
+
+        if aUpperValue &lt; self.mMinimum:
+            aUpperValue = self.mMinimum
+
+        self.mUpperValue = aUpperValue
+        self.upperValueChanged.emit(self.mUpperValue)
+        self.valueChanged.emit(self.mLowerValue, self.mUpperValue)
+
+        self.update()
+
+    def setMinimum(self, aMinimum: int):
+        if aMinimum &lt;= self.mMaximum:
+            self.mMinimum = aMinimum
+        else:
+            oldMax = self.mMaximum
+            self.mMinimum = oldMax
+            self.mMaximum = aMinimum
+        self.mInterval = self.mMaximum - self.mMinimum
+        self.update()
+
+        self.setLowerValue(self.mMinimum)
+        self.setUpperValue(self.mMaximum)
+
+        self.rangeChanged.emit(self.mMinimum, self.mMaximum)
+
+    def setMaximum(self, aMaximum: int):
+        if (aMaximum &gt;= self.mMinimum):
+            self.mMaximum = aMaximum
+        else:
+            oldMin = self.mMinimum
+            self.mMaximum = oldMin
+            self.mMinimum = aMaximum
+
+        self.mInterval = self.mMaximum - self.mMinimum
+        self.update()
+
+        self.setLowerValue(self.mMinimum)
+        self.setUpperValue(self.mMaximum)
+
+        self.rangeChanged.emit(self.mMinimum, self.mMaximum)
+
+    def validLength(self) -&gt; int:
+        len = self.width() if self.orientation == QtCore.Qt.Horizontal else self.height()
+        return len - scLeftRightMargin * 2 - scHandleSideLength * (
+            2 if self.type.DoubleHandles in self.type else 1)
+
+    def SetRange(self, aMinimum: int, aMaximum: int):
+        self.setMinimum(aMinimum)
+        self.setMaximum(aMaximum)
+
+    def setOrientation(self, orientation):
+        self.orientation = orientation
+
+    def setTickPosition(self, ticks):
+        a = 5</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.Option"><code class="name">var <span class="ident">Option</span></code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.GetLowerValue"><code class="name flex">
+<span>def <span class="ident">GetLowerValue</span></span>(<span>self) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GetLowerValue(self) -&gt; int:
+    return int(self.mLowerValue)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.GetMaximum"><code class="name flex">
+<span>def <span class="ident">GetMaximum</span></span>(<span>self) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GetMaximum(self) -&gt; int:
+    return self.mMaximum</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.GetMinimum"><code class="name flex">
+<span>def <span class="ident">GetMinimum</span></span>(<span>self) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GetMinimum(self) -&gt; int:
+    return self.mMinimum</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.GetUpperValue"><code class="name flex">
+<span>def <span class="ident">GetUpperValue</span></span>(<span>self) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GetUpperValue(self) -&gt; int:
+    return int(self.mUpperValue)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.SetLowerValue"><code class="name flex">
+<span>def <span class="ident">SetLowerValue</span></span>(<span>self, aLowerValue: int)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SetLowerValue(self, aLowerValue: int):
+    self.setLowerValue(aLowerValue)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.SetMaximum"><code class="name flex">
+<span>def <span class="ident">SetMaximum</span></span>(<span>self, aMaximum: int)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SetMaximum(self, aMaximum: int):
+    self.setMaximum(aMaximum)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.SetMinimum"><code class="name flex">
+<span>def <span class="ident">SetMinimum</span></span>(<span>self, aMinimum: int)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SetMinimum(self, aMinimum: int):
+    self.setMinimum(aMinimum)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.SetRange"><code class="name flex">
+<span>def <span class="ident">SetRange</span></span>(<span>self, aMinimum: int, aMaximum: int)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SetRange(self, aMinimum: int, aMaximum: int):
+    self.setMinimum(aMinimum)
+    self.setMaximum(aMaximum)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.SetUpperValue"><code class="name flex">
+<span>def <span class="ident">SetUpperValue</span></span>(<span>self, aUpperValue: int)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SetUpperValue(self, aUpperValue: int):
+    self.setUpperValue(aUpperValue)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.changeEvent"><code class="name flex">
+<span>def <span class="ident">changeEvent</span></span>(<span>self, aEvent: PyQt5.QtCore.QEvent)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>changeEvent(self, QEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def changeEvent(self, aEvent: QtCore.QEvent):
+
+    if aEvent.type() == QtCore.QEvent.EnabledChange:
+        if self.isEnabled():
+            self.mBackgroudColor = self.mBackgroudColorEnabled
+        else:
+            self.mBackgroudColor = self.mBackgroudColorDisabled
+        self.update()</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.firstHandleRect"><code class="name flex">
+<span>def <span class="ident">firstHandleRect</span></span>(<span>self) ‑> PyQt5.QtCore.QRectF</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def firstHandleRect(self) -&gt; QtCore.QRectF:
+    percentage = (self.mLowerValue - self.mMinimum) * 1.0 / self.mInterval
+    return self.handleRect(percentage * self.validLength() + scLeftRightMargin)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.handleRect"><code class="name flex">
+<span>def <span class="ident">handleRect</span></span>(<span>self, aValue: float) ‑> PyQt5.QtCore.QRectF</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def handleRect(self, aValue: float) -&gt; QtCore.QRectF:
+    aValue = int(aValue)
+    if self.orientation == QtCore.Qt.Horizontal:
+        return QtCore.QRect(aValue, (self.height() - scHandleSideLength) // 2,
+                            scHandleSideLength, scHandleSideLength)
+    else:
+        return QtCore.QRect((self.width() - scHandleSideLength) // 2, aValue,
+                            scHandleSideLength, scHandleSideLength)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.lowerValueChanged"><code class="name flex">
+<span>def <span class="ident">lowerValueChanged</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.minimumSizeHint"><code class="name flex">
+<span>def <span class="ident">minimumSizeHint</span></span>(<span>self) ‑> PyQt5.QtCore.QSize</span>
+</code></dt>
+<dd>
+<div class="desc"><p>minimumSizeHint(self) -&gt; QSize</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def minimumSizeHint(self) -&gt; QtCore.QSize:
+    return QtCore.QSize(scHandleSideLength * 2 + scLeftRightMargin * 2, scHandleSideLength)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.mouseMoveEvent"><code class="name flex">
+<span>def <span class="ident">mouseMoveEvent</span></span>(<span>self, aEvent: PyQt5.QtGui.QMouseEvent)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>mouseMoveEvent(self, QMouseEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mouseMoveEvent(self, aEvent: QtGui.QMouseEvent):
+    if aEvent.buttons() &amp; QtCore.Qt.LeftButton:
+        posValue = aEvent.pos().x() if self.orientation == QtCore.Qt.Horizontal else aEvent.pos().y()
+        firstHandleRectPosValue = self.firstHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.firstHandleRect().y()
+        secondHandleRectPosValue = self.secondHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.secondHandleRect().y()
+
+        if self.mFirstHandlePressed and self.Option.LeftHandle in self.type:
+
+            if posValue - self.mDelta + scHandleSideLength / 2 &lt;= secondHandleRectPosValue:
+                self.setLowerValue((
+                                           posValue - self.mDelta - scLeftRightMargin - scHandleSideLength / 2) * 1.0 / self.validLength() * self.mInterval + self.mMinimum)
+            else:
+                self.setLowerValue(self.mUpperValue)
+        elif (self.mSecondHandlePressed and self.Option.RightHandle in self.type):
+            if (firstHandleRectPosValue + scHandleSideLength * (
+                    1.5 if self.Option.DoubleHandles in self.type else 0.5) &lt;= posValue - self.mDelta):
+                self.setUpperValue((posValue - self.mDelta - scLeftRightMargin - scHandleSideLength / 2 - (
+                    scHandleSideLength if self.Option.DoubleHandles in self.type else 0)) * 1.0 / self.validLength() * self.mInterval + self.mMinimum)
+            else:
+                self.setUpperValue(self.mLowerValue)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.mousePressEvent"><code class="name flex">
+<span>def <span class="ident">mousePressEvent</span></span>(<span>self, aEvent: PyQt5.QtGui.QMouseEvent) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>mousePressEvent(self, QMouseEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mousePressEvent(self, aEvent: QtGui.QMouseEvent) -&gt; None:
+    if aEvent.buttons() &amp; QtCore.Qt.LeftButton:
+        posCheck = aEvent.pos().y() if self.orientation == QtCore.Qt.Horizontal else aEvent.pos().x()
+        posMax = self.height() if self.orientation == QtCore.Qt.Horizontal else self.width()
+        posValue = aEvent.pos().x() if self.orientation == QtCore.Qt.Horizontal else aEvent.pos().y()
+        firstHandleRectPosValue = self.firstHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.firstHandleRect().y()
+        secondHandleRectPosValue = self.secondHandleRect().x() if self.orientation == QtCore.Qt.Horizontal else self.secondHandleRect().y()
+
+        self.mSecondHandlePressed = self.secondHandleRect().contains(aEvent.pos())
+        self.mFirstHandlePressed = not self.mSecondHandlePressed and self.firstHandleRect().contains(aEvent.pos())
+
+        if self.mFirstHandlePressed:
+            self.mDelta = posValue - (firstHandleRectPosValue + scHandleSideLength / 2)
+            self.mFirstHandleBorderColor = QtGui.QColor(&#39;#3daee9&#39;)
+
+        elif self.mSecondHandlePressed:
+            self.mDelta = posValue - (secondHandleRectPosValue + scHandleSideLength / 2)
+            self.mSecondHandleBorderColor = QtGui.QColor(&#39;#3daee9&#39;)
+
+        elif posCheck &gt;= 2 and posCheck &lt;= posMax - 2:
+            step = 1 if self.mInterval // 10 &lt; 1 else self.mInterval // 10
+            if posValue &lt; firstHandleRectPosValue:
+                self.setLowerValue(self.mLowerValue - step)
+            elif posValue &gt; secondHandleRectPosValue + scHandleSideLength:
+                self.setUpperValue(self.mUpperValue + step)
+            elif ((
+                          posValue &gt; firstHandleRectPosValue + scHandleSideLength) or self.Option.LeftHandle not in self.type
+                  and ((posValue &lt; secondHandleRectPosValue) or self.Option.RightHandle not in self.type)):
+                if self.Option.DoubleHandles in self.type:
+                    if (posValue - (firstHandleRectPosValue + scHandleSideLength) &lt;
+                            (secondHandleRectPosValue - (firstHandleRectPosValue + scHandleSideLength)) // 2):
+                        self.setLowerValue(self.mLowerValue + step if (
+                                self.mLowerValue + step &lt; self.mUpperValue) else self.mUpperValue)
+                    else:
+                        self.setUpperValue(self.mUpperValue - step if (
+                                self.mUpperValue - step &gt; self.mLowerValue) else self.mLowerValue)
+                elif self.Option.LeftHandle in self.type:
+                    self.setLowerValue(self.mLowerValue + step if (
+                            self.mLowerValue + step &lt; self.mUpperValue) else self.mUpperValue)
+                elif self.Option.RightHandle in self.type:
+                    self.setUpperValue(self.mUpperValue - step if (
+                            self.mUpperValue - step &gt; self.mLowerValue) else self.mLowerValue)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.mouseReleaseEvent"><code class="name flex">
+<span>def <span class="ident">mouseReleaseEvent</span></span>(<span>self, aEvent: PyQt5.QtGui.QMouseEvent)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>mouseReleaseEvent(self, QMouseEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mouseReleaseEvent(self, aEvent: QtGui.QMouseEvent):
+    self.mFirstHandlePressed = False
+    self.mSecondHandlePressed = False
+    self.mFirstHandleBorderColor = QtGui.QColor(&#39;#626568&#39;)
+    self.mSecondHandleBorderColor = QtGui.QColor(&#39;#626568&#39;)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.paintEvent"><code class="name flex">
+<span>def <span class="ident">paintEvent</span></span>(<span>self, aEvent: PyQt5.QtGui.QPaintEvent) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>paintEvent(self, QPaintEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def paintEvent(self, aEvent: QtGui.QPaintEvent) -&gt; None:
+    painter = QtGui.QPainter(self)
+
+    # Background
+    if self.orientation == QtCore.Qt.Horizontal:
+        backgroundRect = QRectF(scLeftRightMargin, (self.height() - scSliderBarHeight) / 2,
+                                self.width() - scLeftRightMargin * 2, scSliderBarHeight)
+    else:
+        backgroundRect = QRectF((self.width() - scSliderBarHeight) / 2, scLeftRightMargin, scSliderBarHeight,
+                                self.height() - scLeftRightMargin * 2)
+
+    pen = QPen(QtGui.QColor(&#39;#626568&#39;), 0.1)
+    painter.setPen(pen)
+    painter.setRenderHint(QtGui.QPainter.Qt4CompatiblePainting)
+    backgroundBrush = QtGui.QBrush(QtGui.QColor(&#39;#626568&#39;))
+    painter.setBrush(backgroundBrush)
+    painter.drawRoundedRect(backgroundRect, 2, 2)
+
+    # First value handle rect
+
+    pen.setColor(QtCore.Qt.darkGray)
+    pen.setWidth(0.5)
+    painter.setPen(pen)
+    painter.setRenderHint(QtGui.QPainter.Antialiasing)
+    handleBrush = QtGui.QBrush(QtGui.QColor(&#39;#232629&#39;))
+    painter.setBrush(handleBrush)
+    pen.setColor(self.mFirstHandleBorderColor)
+    painter.setPen(pen)
+    leftHandleRect = self.firstHandleRect()
+    if self.Option.LeftHandle in self.type:
+        painter.drawRoundedRect(leftHandleRect, 10, 10)
+    # Second value handle rect
+    pen.setColor(self.mSecondHandleBorderColor)
+    painter.setPen(pen)
+    rightHandleRect = self.secondHandleRect()
+    if self.Option.RightHandle in self.type:
+        painter.drawRoundedRect(rightHandleRect, 10, 10)
+
+    # Handles
+    pen.setColor(QtGui.QColor(&#39;#3daee9&#39;))
+    painter.setPen(pen)
+    painter.setRenderHint(QtGui.QPainter.Antialiasing, False)
+    selectedRect = QtCore.QRectF(backgroundRect)
+    if self.orientation == QtCore.Qt.Horizontal:
+        selectedRect.setLeft(
+            (leftHandleRect.right() if self.Option.LeftHandle in self.type else leftHandleRect.left()) + 0.5)
+        selectedRect.setRight(
+            (rightHandleRect.left() if self.Option.RightHandle in self.type else rightHandleRect.right()) - 0.5)
+    else:
+        selectedRect.setTop(
+            (leftHandleRect.bottom() if self.Option.LeftHandle in self.type else leftHandleRect.top()) + 0.5)
+        selectedRect.setBottom(
+            (rightHandleRect.top() if self.Option.RightHandle in self.type else rightHandleRect.bottom()) - 0.5)
+
+    selectedBrush = QtGui.QBrush(self.mBackgroudColor)
+    painter.setBrush(selectedBrush)
+    painter.drawRect(selectedRect)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.rangeChanged"><code class="name flex">
+<span>def <span class="ident">rangeChanged</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.secondHandleRect"><code class="name flex">
+<span>def <span class="ident">secondHandleRect</span></span>(<span>self) ‑> PyQt5.QtCore.QRectF</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def secondHandleRect(self) -&gt; QtCore.QRectF:
+    percentage = (self.mUpperValue - self.mMinimum) * 1.0 / self.mInterval
+    return self.handleRect(percentage * self.validLength() + scLeftRightMargin + (
+        scHandleSideLength if self.Option.LeftHandle in self.type else 0))</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.setLowerValue"><code class="name flex">
+<span>def <span class="ident">setLowerValue</span></span>(<span>self, aLowerValue: int)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setLowerValue(self, aLowerValue: int):
+    if aLowerValue &gt; self.mMaximum:
+        aLowerValue = self.mMaximum
+
+    if aLowerValue &lt; self.mMinimum:
+        aLowerValue = self.mMinimum
+
+    self.mLowerValue = aLowerValue
+    self.lowerValueChanged.emit(self.mLowerValue)
+    self.valueChanged.emit(self.mLowerValue, self.mUpperValue)
+
+    self.update()</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.setMaximum"><code class="name flex">
+<span>def <span class="ident">setMaximum</span></span>(<span>self, aMaximum: int)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setMaximum(self, aMaximum: int):
+    if (aMaximum &gt;= self.mMinimum):
+        self.mMaximum = aMaximum
+    else:
+        oldMin = self.mMinimum
+        self.mMaximum = oldMin
+        self.mMinimum = aMaximum
+
+    self.mInterval = self.mMaximum - self.mMinimum
+    self.update()
+
+    self.setLowerValue(self.mMinimum)
+    self.setUpperValue(self.mMaximum)
+
+    self.rangeChanged.emit(self.mMinimum, self.mMaximum)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.setMinimum"><code class="name flex">
+<span>def <span class="ident">setMinimum</span></span>(<span>self, aMinimum: int)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setMinimum(self, aMinimum: int):
+    if aMinimum &lt;= self.mMaximum:
+        self.mMinimum = aMinimum
+    else:
+        oldMax = self.mMaximum
+        self.mMinimum = oldMax
+        self.mMaximum = aMinimum
+    self.mInterval = self.mMaximum - self.mMinimum
+    self.update()
+
+    self.setLowerValue(self.mMinimum)
+    self.setUpperValue(self.mMaximum)
+
+    self.rangeChanged.emit(self.mMinimum, self.mMaximum)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.setOrientation"><code class="name flex">
+<span>def <span class="ident">setOrientation</span></span>(<span>self, orientation)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setOrientation(self, orientation):
+    self.orientation = orientation</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.setTickPosition"><code class="name flex">
+<span>def <span class="ident">setTickPosition</span></span>(<span>self, ticks)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setTickPosition(self, ticks):
+    a = 5</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.setUpperValue"><code class="name flex">
+<span>def <span class="ident">setUpperValue</span></span>(<span>self, aUpperValue: int)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setUpperValue(self, aUpperValue: int):
+    if aUpperValue &gt; self.mMaximum:
+        aUpperValue = self.mMaximum
+
+    if aUpperValue &lt; self.mMinimum:
+        aUpperValue = self.mMinimum
+
+    self.mUpperValue = aUpperValue
+    self.upperValueChanged.emit(self.mUpperValue)
+    self.valueChanged.emit(self.mLowerValue, self.mUpperValue)
+
+    self.update()</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.upperValueChanged"><code class="name flex">
+<span>def <span class="ident">upperValueChanged</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.validLength"><code class="name flex">
+<span>def <span class="ident">validLength</span></span>(<span>self) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def validLength(self) -&gt; int:
+    len = self.width() if self.orientation == QtCore.Qt.Horizontal else self.height()
+    return len - scLeftRightMargin * 2 - scHandleSideLength * (
+        2 if self.type.DoubleHandles in self.type else 1)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.rangeSlider.RangeSlider.valueChanged"><code class="name flex">
+<span>def <span class="ident">valueChanged</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Pandemic-Simulator.view" href="index.html">Pandemic-Simulator.view</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider">RangeSlider</a></code></h4>
+<ul class="two-column">
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.GetLowerValue" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.GetLowerValue">GetLowerValue</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.GetMaximum" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.GetMaximum">GetMaximum</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.GetMinimum" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.GetMinimum">GetMinimum</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.GetUpperValue" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.GetUpperValue">GetUpperValue</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.Option" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.Option">Option</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.SetLowerValue" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.SetLowerValue">SetLowerValue</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.SetMaximum" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.SetMaximum">SetMaximum</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.SetMinimum" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.SetMinimum">SetMinimum</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.SetRange" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.SetRange">SetRange</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.SetUpperValue" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.SetUpperValue">SetUpperValue</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.changeEvent" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.changeEvent">changeEvent</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.firstHandleRect" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.firstHandleRect">firstHandleRect</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.handleRect" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.handleRect">handleRect</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.lowerValueChanged" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.lowerValueChanged">lowerValueChanged</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.minimumSizeHint" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.minimumSizeHint">minimumSizeHint</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.mouseMoveEvent" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.mouseMoveEvent">mouseMoveEvent</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.mousePressEvent" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.mousePressEvent">mousePressEvent</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.mouseReleaseEvent" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.mouseReleaseEvent">mouseReleaseEvent</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.paintEvent" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.paintEvent">paintEvent</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.rangeChanged" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.rangeChanged">rangeChanged</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.secondHandleRect" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.secondHandleRect">secondHandleRect</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.setLowerValue" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.setLowerValue">setLowerValue</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.setMaximum" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.setMaximum">setMaximum</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.setMinimum" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.setMinimum">setMinimum</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.setOrientation" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.setOrientation">setOrientation</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.setTickPosition" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.setTickPosition">setTickPosition</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.setUpperValue" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.setUpperValue">setUpperValue</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.upperValueChanged" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.upperValueChanged">upperValueChanged</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.validLength" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.validLength">validLength</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.rangeSlider.RangeSlider.valueChanged" href="#Pandemic-Simulator.view.rangeSlider.RangeSlider.valueChanged">valueChanged</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

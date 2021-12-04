@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>Pandemic-Simulator.view.animatedtoggle API documentation</title>
+<meta name="description" content="Element of the view.
+Contains the AnimatedToggle class.
+Creates an animated Toggle instead of a Checkbox.
+Source: …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Pandemic-Simulator.view.animatedtoggle</code></h1>
+</header>
+<section id="section-intro">
+<p>Element of the view.
+Contains the AnimatedToggle class.
+Creates an animated Toggle instead of a Checkbox.
+Source: <a href="https://www.learnpyqt.com/tutorials/qpropertyanimation/">https://www.learnpyqt.com/tutorials/qpropertyanimation/</a></p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+    Element of the view.
+    Contains the AnimatedToggle class.
+    Creates an animated Toggle instead of a Checkbox.
+    Source: https://www.learnpyqt.com/tutorials/qpropertyanimation/
+&#34;&#34;&#34;
+
+from PyQt5.QtCore import (
+    QSize, QPoint, QPointF, QRectF,
+    QEasingCurve, QPropertyAnimation,
+    pyqtSlot, pyqtProperty)
+from PyQt5.QtGui import QBrush, QPaintEvent, QPen, QPainter
+from PyQt5.QtWidgets import QCheckBox
+
+from constants import *
+
+
+class AnimatedToggle(QCheckBox):
+    &#34;&#34;&#34;
+        An AnimatedToggle which replaces a QCheckbox.
+
+        Attributes
+        ----------
+        _bar_brush: QBrush
+            contains the brush for the bar
+        _bar_checked_brush: QBrush
+            contains the brush for the bar when the toggle is checked
+        _bar_disabled_brush: QBrush
+            contains the brush for the bar when the toggle is disabled
+        _bar_disabled_checked_brush: QBrush
+            contains the brush for the bar when the toggle is checked and disabled
+        _handle_brush: QBrush
+            contains the brush for the handle
+        _handle_checked_brush: QBrush
+            contains the brush for the handle when the toggle is checked
+        _handle_disabled_brush: QBrush
+            contains the brush for the handle when the toggle is disabled
+        _handle_disabled_checked_brush: QBrush
+            contains the brush for the handle when the toggle is checked and disabled
+        _handle_position: int
+            contains the position of the handle
+        animation: QPropertyAnimation
+            contains the animation of the toggle
+    &#34;&#34;&#34;
+    _transparent_pen = QPen(COLOR_TOGGLE_HANDLE)
+    _light_grey_pen = QPen(COLOR_TOGGLE_HANDLE_DISABLED)
+    _dark_grey_pen = QPen(COLOR_TOGGLE_HANDLE)
+
+    def __init__(self, parent=None) -&gt; None:
+        &#34;&#34;&#34;Inits the AnimatedToggle.
+
+        Parameters
+        ----------
+        parent: QCheckBox
+            parent of the toggle
+        &#34;&#34;&#34;
+        super().__init__(parent)
+
+        self._bar_brush = QBrush(COLOR_TOGGLE_NOT_CHECKED)
+        self._bar_checked_brush = QBrush(COLOR_TOGGLE_CHECKED)
+        self._bar_disabled_brush = QBrush(COLOR_TOGGLE_DISABLED)
+        self._bar_disabled_checked_brush = QBrush(COLOR_TOGGLE_CHECKED_DISABLED)
+
+        self._handle_brush = QBrush(COLOR_TOGGLE_HANDLE)
+        self._handle_checked_brush = QBrush(COLOR_TOGGLE_HANDLE)
+        self._handle_disabled_brush = QBrush(COLOR_TOGGLE_HANDLE_DISABLED)
+        self._handle_disabled_checked_brush = QBrush(COLOR_TOGGLE_HANDLE_DISABLED)
+
+        self.setContentsMargins(0, 0, 0, 0)
+        self._handle_position = 0
+
+        self.animation = QPropertyAnimation(self, b&#34;handle_position&#34;, self)
+        self.animation.setEasingCurve(QEasingCurve.InOutCubic)
+        self.animation.setDuration(200)
+
+        self.stateChanged.connect(self.setup_animation)
+
+    def sizeHint(self) -&gt; None:
+        &#34;&#34;&#34;Returns the size of the hint&#34;&#34;&#34;
+        return QSize(58, 18)
+
+    def hitButton(self, pos: QPoint):
+        &#34;&#34;&#34;Returns the position of the handle
+
+        Returns
+        -------
+            contentsRect().contains(pos)
+        &#34;&#34;&#34;
+        return self.contentsRect().contains(pos)
+
+    @pyqtSlot(int)
+    def setup_animation(self, value: int) -&gt; None:
+        &#34;&#34;&#34;Setup the animation
+
+        Parameters
+        ----------
+        value: int
+            position of the handle
+        &#34;&#34;&#34;
+        self.animation.stop()
+        if value:
+            self.animation.setEndValue(1)
+        else:
+            self.animation.setEndValue(0)
+        self.animation.start()
+
+    def paintEvent(self, e: QPaintEvent) -&gt; None:
+        &#34;&#34;&#34; Paints the AnimatedToggle.
+
+        Parameters
+        ----------
+        e: QPaintEvent
+            Paintevent
+
+        &#34;&#34;&#34;
+
+        contRect = self.contentsRect()
+        handleRadius = round(0.30 * contRect.height())
+
+        p = QPainter(self)
+        p.setRenderHint(QPainter.Antialiasing)
+
+        p.setPen(self._transparent_pen)
+        barRect = QRectF(
+            0, 0,
+            contRect.width() - handleRadius, 0.90 * contRect.height()
+        )
+        barRect.moveCenter(contRect.center())
+        rounding = barRect.height() / 2
+
+        # the handle will move along this line
+        trailLength = contRect.width() - 4 * handleRadius
+
+        xPos = contRect.x() + handleRadius + trailLength * self._handle_position + 0.9 * handleRadius
+
+        if self.isEnabled():
+            if self.isChecked():
+                p.setBrush(self._bar_checked_brush)
+                p.drawRoundedRect(barRect, rounding, rounding)
+                p.setBrush(self._handle_checked_brush)
+
+            else:
+                p.setBrush(self._bar_brush)
+                p.drawRoundedRect(barRect, rounding, rounding)
+                p.setPen(self._dark_grey_pen)
+                p.setBrush(self._handle_brush)
+        else:
+            p.setPen(self._light_grey_pen)
+            if self.isChecked():
+                p.setBrush(self._bar_disabled_checked_brush)
+                p.drawRoundedRect(barRect, rounding, rounding)
+                p.setBrush(self._handle_disabled_brush)
+
+            else:
+                p.setBrush(self._bar_disabled_brush)
+                p.drawRoundedRect(barRect, rounding, rounding)
+                p.setBrush(self._handle_disabled_brush)
+
+        p.drawEllipse(
+            QPointF(xPos, barRect.center().y()),
+            handleRadius, handleRadius)
+
+        p.end()
+
+    @pyqtProperty(float)
+    def handle_position(self) -&gt; int:
+        &#34;&#34;&#34; Returns the position of the handle
+
+        Returns
+        -------
+        int:
+            position of the handle
+        &#34;&#34;&#34;
+        return self._handle_position
+
+    @handle_position.setter
+    def handle_position(self, pos: int) -&gt; None:
+        &#34;&#34;&#34;Sets the position of the handle and updates the AnimatedToggle
+
+        Parameters
+        ----------
+        pos: int
+            new position of the handle
+        &#34;&#34;&#34;
+        self._handle_position = pos
+        self.update()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle"><code class="flex name class">
+<span>class <span class="ident">AnimatedToggle</span></span>
+<span>(</span><span>parent=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An AnimatedToggle which replaces a QCheckbox.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>_bar_brush</code></strong> :&ensp;<code>QBrush</code></dt>
+<dd>contains the brush for the bar</dd>
+<dt><strong><code>_bar_checked_brush</code></strong> :&ensp;<code>QBrush</code></dt>
+<dd>contains the brush for the bar when the toggle is checked</dd>
+<dt><strong><code>_bar_disabled_brush</code></strong> :&ensp;<code>QBrush</code></dt>
+<dd>contains the brush for the bar when the toggle is disabled</dd>
+<dt><strong><code>_bar_disabled_checked_brush</code></strong> :&ensp;<code>QBrush</code></dt>
+<dd>contains the brush for the bar when the toggle is checked and disabled</dd>
+<dt><strong><code>_handle_brush</code></strong> :&ensp;<code>QBrush</code></dt>
+<dd>contains the brush for the handle</dd>
+<dt><strong><code>_handle_checked_brush</code></strong> :&ensp;<code>QBrush</code></dt>
+<dd>contains the brush for the handle when the toggle is checked</dd>
+<dt><strong><code>_handle_disabled_brush</code></strong> :&ensp;<code>QBrush</code></dt>
+<dd>contains the brush for the handle when the toggle is disabled</dd>
+<dt><strong><code>_handle_disabled_checked_brush</code></strong> :&ensp;<code>QBrush</code></dt>
+<dd>contains the brush for the handle when the toggle is checked and disabled</dd>
+<dt><strong><code>_handle_position</code></strong> :&ensp;<code>int</code></dt>
+<dd>contains the position of the handle</dd>
+<dt><strong><code>animation</code></strong> :&ensp;<code>QPropertyAnimation</code></dt>
+<dd>contains the animation of the toggle</dd>
+</dl>
+<p>Inits the AnimatedToggle.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>parent</code></strong> :&ensp;<code>QCheckBox</code></dt>
+<dd>parent of the toggle</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AnimatedToggle(QCheckBox):
+    &#34;&#34;&#34;
+        An AnimatedToggle which replaces a QCheckbox.
+
+        Attributes
+        ----------
+        _bar_brush: QBrush
+            contains the brush for the bar
+        _bar_checked_brush: QBrush
+            contains the brush for the bar when the toggle is checked
+        _bar_disabled_brush: QBrush
+            contains the brush for the bar when the toggle is disabled
+        _bar_disabled_checked_brush: QBrush
+            contains the brush for the bar when the toggle is checked and disabled
+        _handle_brush: QBrush
+            contains the brush for the handle
+        _handle_checked_brush: QBrush
+            contains the brush for the handle when the toggle is checked
+        _handle_disabled_brush: QBrush
+            contains the brush for the handle when the toggle is disabled
+        _handle_disabled_checked_brush: QBrush
+            contains the brush for the handle when the toggle is checked and disabled
+        _handle_position: int
+            contains the position of the handle
+        animation: QPropertyAnimation
+            contains the animation of the toggle
+    &#34;&#34;&#34;
+    _transparent_pen = QPen(COLOR_TOGGLE_HANDLE)
+    _light_grey_pen = QPen(COLOR_TOGGLE_HANDLE_DISABLED)
+    _dark_grey_pen = QPen(COLOR_TOGGLE_HANDLE)
+
+    def __init__(self, parent=None) -&gt; None:
+        &#34;&#34;&#34;Inits the AnimatedToggle.
+
+        Parameters
+        ----------
+        parent: QCheckBox
+            parent of the toggle
+        &#34;&#34;&#34;
+        super().__init__(parent)
+
+        self._bar_brush = QBrush(COLOR_TOGGLE_NOT_CHECKED)
+        self._bar_checked_brush = QBrush(COLOR_TOGGLE_CHECKED)
+        self._bar_disabled_brush = QBrush(COLOR_TOGGLE_DISABLED)
+        self._bar_disabled_checked_brush = QBrush(COLOR_TOGGLE_CHECKED_DISABLED)
+
+        self._handle_brush = QBrush(COLOR_TOGGLE_HANDLE)
+        self._handle_checked_brush = QBrush(COLOR_TOGGLE_HANDLE)
+        self._handle_disabled_brush = QBrush(COLOR_TOGGLE_HANDLE_DISABLED)
+        self._handle_disabled_checked_brush = QBrush(COLOR_TOGGLE_HANDLE_DISABLED)
+
+        self.setContentsMargins(0, 0, 0, 0)
+        self._handle_position = 0
+
+        self.animation = QPropertyAnimation(self, b&#34;handle_position&#34;, self)
+        self.animation.setEasingCurve(QEasingCurve.InOutCubic)
+        self.animation.setDuration(200)
+
+        self.stateChanged.connect(self.setup_animation)
+
+    def sizeHint(self) -&gt; None:
+        &#34;&#34;&#34;Returns the size of the hint&#34;&#34;&#34;
+        return QSize(58, 18)
+
+    def hitButton(self, pos: QPoint):
+        &#34;&#34;&#34;Returns the position of the handle
+
+        Returns
+        -------
+            contentsRect().contains(pos)
+        &#34;&#34;&#34;
+        return self.contentsRect().contains(pos)
+
+    @pyqtSlot(int)
+    def setup_animation(self, value: int) -&gt; None:
+        &#34;&#34;&#34;Setup the animation
+
+        Parameters
+        ----------
+        value: int
+            position of the handle
+        &#34;&#34;&#34;
+        self.animation.stop()
+        if value:
+            self.animation.setEndValue(1)
+        else:
+            self.animation.setEndValue(0)
+        self.animation.start()
+
+    def paintEvent(self, e: QPaintEvent) -&gt; None:
+        &#34;&#34;&#34; Paints the AnimatedToggle.
+
+        Parameters
+        ----------
+        e: QPaintEvent
+            Paintevent
+
+        &#34;&#34;&#34;
+
+        contRect = self.contentsRect()
+        handleRadius = round(0.30 * contRect.height())
+
+        p = QPainter(self)
+        p.setRenderHint(QPainter.Antialiasing)
+
+        p.setPen(self._transparent_pen)
+        barRect = QRectF(
+            0, 0,
+            contRect.width() - handleRadius, 0.90 * contRect.height()
+        )
+        barRect.moveCenter(contRect.center())
+        rounding = barRect.height() / 2
+
+        # the handle will move along this line
+        trailLength = contRect.width() - 4 * handleRadius
+
+        xPos = contRect.x() + handleRadius + trailLength * self._handle_position + 0.9 * handleRadius
+
+        if self.isEnabled():
+            if self.isChecked():
+                p.setBrush(self._bar_checked_brush)
+                p.drawRoundedRect(barRect, rounding, rounding)
+                p.setBrush(self._handle_checked_brush)
+
+            else:
+                p.setBrush(self._bar_brush)
+                p.drawRoundedRect(barRect, rounding, rounding)
+                p.setPen(self._dark_grey_pen)
+                p.setBrush(self._handle_brush)
+        else:
+            p.setPen(self._light_grey_pen)
+            if self.isChecked():
+                p.setBrush(self._bar_disabled_checked_brush)
+                p.drawRoundedRect(barRect, rounding, rounding)
+                p.setBrush(self._handle_disabled_brush)
+
+            else:
+                p.setBrush(self._bar_disabled_brush)
+                p.drawRoundedRect(barRect, rounding, rounding)
+                p.setBrush(self._handle_disabled_brush)
+
+        p.drawEllipse(
+            QPointF(xPos, barRect.center().y()),
+            handleRadius, handleRadius)
+
+        p.end()
+
+    @pyqtProperty(float)
+    def handle_position(self) -&gt; int:
+        &#34;&#34;&#34; Returns the position of the handle
+
+        Returns
+        -------
+        int:
+            position of the handle
+        &#34;&#34;&#34;
+        return self._handle_position
+
+    @handle_position.setter
+    def handle_position(self, pos: int) -&gt; None:
+        &#34;&#34;&#34;Sets the position of the handle and updates the AnimatedToggle
+
+        Parameters
+        ----------
+        pos: int
+            new position of the handle
+        &#34;&#34;&#34;
+        self._handle_position = pos
+        self.update()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QCheckBox</li>
+<li>PyQt5.QtWidgets.QAbstractButton</li>
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.handle_position"><code class="name">var <span class="ident">handle_position</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Returns the position of the handle</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int:</code></dt>
+<dd>position of the handle</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@pyqtProperty(float)
+def handle_position(self) -&gt; int:
+    &#34;&#34;&#34; Returns the position of the handle
+
+    Returns
+    -------
+    int:
+        position of the handle
+    &#34;&#34;&#34;
+    return self._handle_position</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.hitButton"><code class="name flex">
+<span>def <span class="ident">hitButton</span></span>(<span>self, pos: PyQt5.QtCore.QPoint)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the position of the handle</p>
+<h2 id="returns">Returns</h2>
+<pre><code>contentsRect().contains(pos)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def hitButton(self, pos: QPoint):
+    &#34;&#34;&#34;Returns the position of the handle
+
+    Returns
+    -------
+        contentsRect().contains(pos)
+    &#34;&#34;&#34;
+    return self.contentsRect().contains(pos)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.paintEvent"><code class="name flex">
+<span>def <span class="ident">paintEvent</span></span>(<span>self, e: PyQt5.QtGui.QPaintEvent) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Paints the AnimatedToggle.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>e</code></strong> :&ensp;<code>QPaintEvent</code></dt>
+<dd>Paintevent</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def paintEvent(self, e: QPaintEvent) -&gt; None:
+    &#34;&#34;&#34; Paints the AnimatedToggle.
+
+    Parameters
+    ----------
+    e: QPaintEvent
+        Paintevent
+
+    &#34;&#34;&#34;
+
+    contRect = self.contentsRect()
+    handleRadius = round(0.30 * contRect.height())
+
+    p = QPainter(self)
+    p.setRenderHint(QPainter.Antialiasing)
+
+    p.setPen(self._transparent_pen)
+    barRect = QRectF(
+        0, 0,
+        contRect.width() - handleRadius, 0.90 * contRect.height()
+    )
+    barRect.moveCenter(contRect.center())
+    rounding = barRect.height() / 2
+
+    # the handle will move along this line
+    trailLength = contRect.width() - 4 * handleRadius
+
+    xPos = contRect.x() + handleRadius + trailLength * self._handle_position + 0.9 * handleRadius
+
+    if self.isEnabled():
+        if self.isChecked():
+            p.setBrush(self._bar_checked_brush)
+            p.drawRoundedRect(barRect, rounding, rounding)
+            p.setBrush(self._handle_checked_brush)
+
+        else:
+            p.setBrush(self._bar_brush)
+            p.drawRoundedRect(barRect, rounding, rounding)
+            p.setPen(self._dark_grey_pen)
+            p.setBrush(self._handle_brush)
+    else:
+        p.setPen(self._light_grey_pen)
+        if self.isChecked():
+            p.setBrush(self._bar_disabled_checked_brush)
+            p.drawRoundedRect(barRect, rounding, rounding)
+            p.setBrush(self._handle_disabled_brush)
+
+        else:
+            p.setBrush(self._bar_disabled_brush)
+            p.drawRoundedRect(barRect, rounding, rounding)
+            p.setBrush(self._handle_disabled_brush)
+
+    p.drawEllipse(
+        QPointF(xPos, barRect.center().y()),
+        handleRadius, handleRadius)
+
+    p.end()</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.setup_animation"><code class="name flex">
+<span>def <span class="ident">setup_animation</span></span>(<span>self, value: int) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Setup the animation</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>value</code></strong> :&ensp;<code>int</code></dt>
+<dd>position of the handle</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@pyqtSlot(int)
+def setup_animation(self, value: int) -&gt; None:
+    &#34;&#34;&#34;Setup the animation
+
+    Parameters
+    ----------
+    value: int
+        position of the handle
+    &#34;&#34;&#34;
+    self.animation.stop()
+    if value:
+        self.animation.setEndValue(1)
+    else:
+        self.animation.setEndValue(0)
+    self.animation.start()</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.sizeHint"><code class="name flex">
+<span>def <span class="ident">sizeHint</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the size of the hint</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sizeHint(self) -&gt; None:
+    &#34;&#34;&#34;Returns the size of the hint&#34;&#34;&#34;
+    return QSize(58, 18)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Pandemic-Simulator.view" href="index.html">Pandemic-Simulator.view</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle" href="#Pandemic-Simulator.view.animatedtoggle.AnimatedToggle">AnimatedToggle</a></code></h4>
+<ul class="">
+<li><code><a title="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.handle_position" href="#Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.handle_position">handle_position</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.hitButton" href="#Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.hitButton">hitButton</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.paintEvent" href="#Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.paintEvent">paintEvent</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.setup_animation" href="#Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.setup_animation">setup_animation</a></code></li>
+<li><code><a title="Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.sizeHint" href="#Pandemic-Simulator.view.animatedtoggle.AnimatedToggle.sizeHint">sizeHint</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

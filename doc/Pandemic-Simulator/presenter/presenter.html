@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>Pandemic-Simulator.presenter.presenter API documentation</title>
+<meta name="description" content="Coordinator of the simulator.
+Contains the Presenter class." />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Pandemic-Simulator.presenter.presenter</code></h1>
+</header>
+<section id="section-intro">
+<p>Coordinator of the simulator.
+Contains the Presenter class.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+    Coordinator of the simulator.
+    Contains the Presenter class.
+&#34;&#34;&#34;
+
+from PyQt5 import QtCore
+from PyQt5.QtCore import QSize
+from PyQt5.QtWidgets import QFileDialog
+
+from constants import FPS
+from model.simulation import Simulation
+from presenter.errors import InfectionError
+from util import open_doc_in_browser
+from view.aboutView import AboutView
+from view.docView import DocView
+from view.view import View
+
+
+class Presenter(QtCore.QObject):
+    &#34;&#34;&#34;A Presenter which controls the model and the view.
+
+    Attributes
+    ----------
+    ui : View
+        the main view
+    about_view : AboutView
+        the about view
+    doc_view : DocView
+        the doc view
+    simulation : Simulation
+        the model
+    is_simulation_running : bool
+        contains if the simulation is running
+    has_simulation_started : bool
+        contains if the simulation has already started
+    timer : QtCore.QTimer
+        timer which calls the main loop 60 times a second
+    trans_window : QTranslator
+            contains the translator of the window
+    trans_about_window : QTranslator
+            contains the translator of the about window
+    trans_view : QTranslator
+            contains the translator of the view
+    trans_presenter : QTranslator
+            contains the translator of the presenter
+    trans_export : QTranslator
+            contains the translator of the export
+    lang : str
+        contains the language
+    &#34;&#34;&#34;
+
+    def __init__(self) -&gt; None:
+        &#34;&#34;&#34; inits Presenter, creates a view and a model.&#34;&#34;&#34;
+        super(Presenter, self).__init__()
+        # create the windows
+        self.ui = View()
+        self.about_view = AboutView()
+        try:
+            from PyQt5.QtWebEngineWidgets import QWebEngineView
+            self.doc_view = DocView()
+        except ImportError:
+            self.doc_view = None
+
+        self.simulation = None
+        self.is_simulation_running = False
+        self.has_simulation_started = False
+
+        # create timer that will call the mainLoop every 1000/FPS milliseconds
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.main_loop)
+        self.timer.start(int(1000 / FPS))
+
+        # install translators
+        self.trans_window, self.trans_about_window, self.trans_view, self.trans_presenter, self.trans_export = \
+            QtCore.QTranslator(self), QtCore.QTranslator(self), QtCore.QTranslator(self), QtCore.QTranslator(self), \
+            QtCore.QTranslator(self)
+        QtCore.QCoreApplication.instance().installTranslator(self.trans_window)
+        QtCore.QCoreApplication.instance().installTranslator(self.trans_about_window)
+        QtCore.QCoreApplication.instance().installTranslator(self.trans_view)
+        QtCore.QCoreApplication.instance().installTranslator(self.trans_presenter)
+        QtCore.QCoreApplication.instance().installTranslator(self.trans_export)
+        self.lang = &#39;de&#39;
+        self.change_lang()
+
+        self.connect_ui_elements()
+
+    def main_loop(self) -&gt; None:
+        &#34;&#34;&#34;Main loop which is called 60 times per second.
+
+        Tells the model to simulate a step. Request the simulation data from the model and sends it to the view.&#34;&#34;&#34;
+        if self.is_simulation_running:
+            self.simulation.simulate()
+            self.ui.update_data(self.simulation.get_data())
+
+    def start_simulation(self) -&gt; None:
+        &#34;&#34;&#34;Starts and stops the simulation. When no simulation is available, a new one is created.&#34;&#34;&#34;
+        if not self.has_simulation_started:
+            self.create_simulation()
+        else:
+            if self.is_simulation_running:
+                self.is_simulation_running = False
+            else:
+                self.is_simulation_running = True
+            self.ui.switch_start_stop_buttons()
+
+    def reset_simulation(self) -&gt; None:
+        &#34;&#34;&#34;Resets the simulation and the view.&#34;&#34;&#34;
+        self.simulation.reset()
+        self.has_simulation_started = False
+        self.is_simulation_running = False
+        self.simulation = None
+        self.ui.reset_simulation()
+
+    def create_simulation(self) -&gt; None:
+        &#34;&#34;&#34;Creates the simulation.
+
+        Request the parameters from the view, checks if they are valid and
+        creates a SimulationParameter object which contains all parameters
+        and starts the simulation. If the data is invalid, a warning_text is
+        displayed.&#34;&#34;&#34;
+        try:
+            data = self.ui.create_simulation()
+            if int(data[&#39;humans&#39;]) &lt; int(data[&#39;infected&#39;]):
+                raise InfectionError()
+            if data[&#39;preset&#39;] != 0:
+                preset_data = self.ui.get_current_preset_data()
+            else:
+                preset_data = None
+
+            self.simulation = Simulation(data, self.ui.get_size_world(), preset_data)
+            self.has_simulation_started = True
+            self.start_simulation()
+        except InfectionError:
+            self.ui.reset_simulation()
+            self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Warning infected&#39;,
+                                                                              &#34;Warning: The number of infected &#34;
+                                                                              &#34;people must not exceed that of &#34;
+                                                                              &#34;humans.&#34;),
+                                 &#34;red&#34;, 10000)
+
+    def connect_ui_elements(self) -&gt; None:
+        &#34;&#34;&#34;Connects all signals of the view with the presenter.&#34;&#34;&#34;
+        self.ui.start_simulation_signal.connect(self.start_simulation)
+        self.ui.reset_simulation_signal.connect(self.reset_simulation)
+        self.ui.window_resized_signal.connect(self.resize_window)
+        self.ui.simulation_speed_changed_signal.connect(self.speed_changed)
+        self.ui.export_signal.connect(self.export_granularity)
+        self.ui.export_confirmation_signal.connect(self.save_export)
+        self.ui.show_about_signal.connect(self.show_about_view)
+        self.ui.show_infection_radius_signal.connect(self.show_infection_radius_changed)
+        self.ui.show_home_signal.connect(self.show_home_changed)
+        self.ui.show_humans_signal.connect(self.show_humans_changed)
+        self.ui.show_social_distance_signal.connect(self.show_social_distance_changed)
+        self.ui.language_changed_signal.connect(self.change_lang)
+        self.ui.open_doc_signal.connect(self.open_doc)
+        self.ui.abort_export_signal.connect(self.abort_export)
+
+    def resize_window(self) -&gt; None:
+        &#34;&#34;&#34;Is called, when the window is resized. Tells the simulation that the size of the world has changed.&#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.set_world_size(self.ui.get_old_size_world(), self.ui.get_size_world())
+            self.ui.update_data(self.simulation.get_data())
+
+    def speed_changed(self, speed: int) -&gt; None:
+        &#34;&#34;&#34;Is called, when the simulation speed is changed. Corrects the speed in the simulation parameter via the
+        simulation.
+
+        Parameters
+        ----------
+        speed : int
+            The value of the simulation speed slider
+        &#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.speed_changed(speed)
+
+    def export_granularity(self) -&gt; None:
+        &#34;&#34;&#34;Is called, when the user wants to start the export-process.
+        Switches stacked widget from parameter to export and stops the simulation.
+        If there is no simulation a warning_text will be displayed.&#34;&#34;&#34;
+        if not self.has_simulation_started:
+            self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Warning export&#39;,
+                                                                              &#34;Warning: No data is available yet. The &#34;
+                                                                              &#34;simulation must first be started.&#34;),
+                                 &#34;red&#34;, 10000)
+        else:
+            self.ui.switch_parameter_widget()
+            if self.is_simulation_running:
+                self.start_simulation()
+                self.ui.dis_enable_export(True)
+
+    def save_export(self) -&gt; None:
+        &#34;&#34;&#34;Is called, when the user wants to choose the file location where the exported data will be saved.
+        Switches stacked widget from export to the parameters.
+        Displays an information when the data is successfully exported.&#34;&#34;&#34;
+        export_parameter = self.ui.get_export_parameter()
+        if not export_parameter[&#39;plot&#39;] and not export_parameter[&#39;csv&#39;]:
+            self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Message export not chosen&#39;,
+                                                                              &#34;The export failed, because no option is &#34;
+                                                                              &#34;selected.&#34;),
+                                 &#34;red&#34;, 5000)
+            return
+        options = QFileDialog.Options()
+        location = &#34;&#34;
+        if export_parameter[&#39;csv&#39;] and export_parameter[&#39;plot&#39;]:
+            location, _ = QFileDialog.getSaveFileName(self.ui,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export data&#39;,
+                                                                                                      &#34;Export data&#34;),
+                                                         &#34;&#34;,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export file zip&#39;,
+                                                                                                      &#34;zip-file &#34;
+                                                                                                      &#34;(*.zip)&#34;),
+                                                         options=options)
+        elif export_parameter[&#39;csv&#39;]:
+            location, _ = QFileDialog.getSaveFileName(self.ui,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export data&#39;,
+                                                                                                      &#34;Export data&#34;),
+                                                         &#34;&#34;,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export file csv&#39;,
+                                                                                                         &#34;csv-file &#34;
+                                                                                                         &#34;(*.csv)&#34;),
+                                                         options=options)
+        elif export_parameter[&#39;plot&#39;]:
+            location, _ = QFileDialog.getSaveFileName(self.ui,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export data&#39;,
+                                                                                                      &#34;Export data&#34;),
+                                                         &#34;&#34;,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export file png&#39;,
+                                                                                                      &#34;png-file &#34;
+                                                                                                      &#34;(*.png)&#34;),
+                                                         options=options)
+        res = self.simulation.export_data(location, export_parameter)
+        self.ui.switch_parameter_widget()
+        if res:
+            self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Message export successful&#39;,
+                                                                              &#34;The simulation data was exported &#34;
+                                                                              &#34;successfully.&#34;),
+                                 &#34;green&#34;, 5000)
+        else:
+            self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Message export failed&#39;,
+                                                                              &#34;The export failed.&#34;),
+                                 &#34;red&#34;, 5000)
+        self.ui.dis_enable_export(False)
+
+    def abort_export(self) -&gt; None:
+        &#34;&#34;&#34;Aborts export and changes the widget and enables the control&#34;&#34;&#34;
+        self.ui.switch_parameter_widget()
+        self.ui.dis_enable_export(False)
+
+    def show_about_view(self) -&gt; None:
+        &#34;&#34;&#34;Show the aboutWindow&#34;&#34;&#34;
+        self.about_view.show()
+        self.about_view.foregroundRole()
+
+    def show_infection_radius_changed(self) -&gt; None:
+        &#34;&#34;&#34;Is called when the parameter show infection radius from the extended view section is toggled.
+        Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.show_infection_radius_changed(self.ui.get_show_infection_radius())
+
+    def show_home_changed(self) -&gt; None:
+        &#34;&#34;&#34;Is called when the parameter show homes from the extended view section is toggled.
+                Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.show_home_changed(self.ui.get_show_home())
+
+    def show_humans_changed(self) -&gt; None:
+        &#34;&#34;&#34;Is called when the parameter show humans from the extended view section is toggled.
+                Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.show_humans_changed(self.ui.get_show_humans())
+
+    def show_social_distance_changed(self) -&gt; None:
+        &#34;&#34;&#34;Is called when the parameter show social distance from the extended view section is toggled.
+                Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.show_social_distance_changed(self.ui.get_show_social_distance())
+
+    def change_lang(self) -&gt; None:
+        &#34;&#34;&#34;Is called when the user wants to switch the language in the menubar.
+        Changes the language and tells the view to translate itself.&#34;&#34;&#34;
+        if self.lang == &#39;de&#39;:
+            self.lang = &#39;en&#39;
+            self.trans_presenter.load(&#39;resources/translations/presenter-en-en.qm&#39;)
+            self.trans_window.load(&#39;resources/translations/window-de-en.qm&#39;)
+            self.trans_about_window.load(&#39;resources/translations/about-de-en.qm&#39;)
+            self.trans_view.load(&#39;resources/translations/view-en-en.qm&#39;)
+            self.trans_export.load(&#39;resources/translations/export-en-en.qm&#39;)
+        else:
+            self.lang = &#39;de&#39;
+            self.trans_presenter.load(&#39;resources/translations/presenter-en-de.qm&#39;)
+            self.trans_window.load(&#39;resources/translations/window-de-de.qm&#39;)
+            self.trans_about_window.load(&#39;resources/translations/about-de-de.qm&#39;)
+            self.trans_view.load(&#39;resources/translations/view-en-de.qm&#39;)
+            self.trans_export.load(&#39;resources/translations/export-en-de.qm&#39;)
+        self.ui.change_lang(self.lang)
+        self.about_view.change_lang()
+
+    def open_doc(self) -&gt; None:
+        &#34;&#34;&#34;Opens the documentation in a new window or in a browser.&#34;&#34;&#34;
+        if self.doc_view is not None:
+            self.doc_view.setFixedSize(QSize(self.ui.size().width(), self.ui.size().height()))
+            self.doc_view.show()
+        else:
+            open_doc_in_browser()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter"><code class="flex name class">
+<span>class <span class="ident">Presenter</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A Presenter which controls the model and the view.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>ui</code></strong> :&ensp;<code>View</code></dt>
+<dd>the main view</dd>
+<dt><strong><code>about_view</code></strong> :&ensp;<code>AboutView</code></dt>
+<dd>the about view</dd>
+<dt><strong><code>doc_view</code></strong> :&ensp;<code>DocView</code></dt>
+<dd>the doc view</dd>
+<dt><strong><code>simulation</code></strong> :&ensp;<code>Simulation</code></dt>
+<dd>the model</dd>
+<dt><strong><code>is_simulation_running</code></strong> :&ensp;<code>bool</code></dt>
+<dd>contains if the simulation is running</dd>
+<dt><strong><code>has_simulation_started</code></strong> :&ensp;<code>bool</code></dt>
+<dd>contains if the simulation has already started</dd>
+<dt><strong><code>timer</code></strong> :&ensp;<code>QtCore.QTimer</code></dt>
+<dd>timer which calls the main loop 60 times a second</dd>
+<dt><strong><code>trans_window</code></strong> :&ensp;<code>QTranslator</code></dt>
+<dd>contains the translator of the window</dd>
+<dt><strong><code>trans_about_window</code></strong> :&ensp;<code>QTranslator</code></dt>
+<dd>contains the translator of the about window</dd>
+<dt><strong><code>trans_view</code></strong> :&ensp;<code>QTranslator</code></dt>
+<dd>contains the translator of the view</dd>
+<dt><strong><code>trans_presenter</code></strong> :&ensp;<code>QTranslator</code></dt>
+<dd>contains the translator of the presenter</dd>
+<dt><strong><code>trans_export</code></strong> :&ensp;<code>QTranslator</code></dt>
+<dd>contains the translator of the export</dd>
+<dt><strong><code>lang</code></strong> :&ensp;<code>str</code></dt>
+<dd>contains the language</dd>
+</dl>
+<p>inits Presenter, creates a view and a model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Presenter(QtCore.QObject):
+    &#34;&#34;&#34;A Presenter which controls the model and the view.
+
+    Attributes
+    ----------
+    ui : View
+        the main view
+    about_view : AboutView
+        the about view
+    doc_view : DocView
+        the doc view
+    simulation : Simulation
+        the model
+    is_simulation_running : bool
+        contains if the simulation is running
+    has_simulation_started : bool
+        contains if the simulation has already started
+    timer : QtCore.QTimer
+        timer which calls the main loop 60 times a second
+    trans_window : QTranslator
+            contains the translator of the window
+    trans_about_window : QTranslator
+            contains the translator of the about window
+    trans_view : QTranslator
+            contains the translator of the view
+    trans_presenter : QTranslator
+            contains the translator of the presenter
+    trans_export : QTranslator
+            contains the translator of the export
+    lang : str
+        contains the language
+    &#34;&#34;&#34;
+
+    def __init__(self) -&gt; None:
+        &#34;&#34;&#34; inits Presenter, creates a view and a model.&#34;&#34;&#34;
+        super(Presenter, self).__init__()
+        # create the windows
+        self.ui = View()
+        self.about_view = AboutView()
+        try:
+            from PyQt5.QtWebEngineWidgets import QWebEngineView
+            self.doc_view = DocView()
+        except ImportError:
+            self.doc_view = None
+
+        self.simulation = None
+        self.is_simulation_running = False
+        self.has_simulation_started = False
+
+        # create timer that will call the mainLoop every 1000/FPS milliseconds
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.main_loop)
+        self.timer.start(int(1000 / FPS))
+
+        # install translators
+        self.trans_window, self.trans_about_window, self.trans_view, self.trans_presenter, self.trans_export = \
+            QtCore.QTranslator(self), QtCore.QTranslator(self), QtCore.QTranslator(self), QtCore.QTranslator(self), \
+            QtCore.QTranslator(self)
+        QtCore.QCoreApplication.instance().installTranslator(self.trans_window)
+        QtCore.QCoreApplication.instance().installTranslator(self.trans_about_window)
+        QtCore.QCoreApplication.instance().installTranslator(self.trans_view)
+        QtCore.QCoreApplication.instance().installTranslator(self.trans_presenter)
+        QtCore.QCoreApplication.instance().installTranslator(self.trans_export)
+        self.lang = &#39;de&#39;
+        self.change_lang()
+
+        self.connect_ui_elements()
+
+    def main_loop(self) -&gt; None:
+        &#34;&#34;&#34;Main loop which is called 60 times per second.
+
+        Tells the model to simulate a step. Request the simulation data from the model and sends it to the view.&#34;&#34;&#34;
+        if self.is_simulation_running:
+            self.simulation.simulate()
+            self.ui.update_data(self.simulation.get_data())
+
+    def start_simulation(self) -&gt; None:
+        &#34;&#34;&#34;Starts and stops the simulation. When no simulation is available, a new one is created.&#34;&#34;&#34;
+        if not self.has_simulation_started:
+            self.create_simulation()
+        else:
+            if self.is_simulation_running:
+                self.is_simulation_running = False
+            else:
+                self.is_simulation_running = True
+            self.ui.switch_start_stop_buttons()
+
+    def reset_simulation(self) -&gt; None:
+        &#34;&#34;&#34;Resets the simulation and the view.&#34;&#34;&#34;
+        self.simulation.reset()
+        self.has_simulation_started = False
+        self.is_simulation_running = False
+        self.simulation = None
+        self.ui.reset_simulation()
+
+    def create_simulation(self) -&gt; None:
+        &#34;&#34;&#34;Creates the simulation.
+
+        Request the parameters from the view, checks if they are valid and
+        creates a SimulationParameter object which contains all parameters
+        and starts the simulation. If the data is invalid, a warning_text is
+        displayed.&#34;&#34;&#34;
+        try:
+            data = self.ui.create_simulation()
+            if int(data[&#39;humans&#39;]) &lt; int(data[&#39;infected&#39;]):
+                raise InfectionError()
+            if data[&#39;preset&#39;] != 0:
+                preset_data = self.ui.get_current_preset_data()
+            else:
+                preset_data = None
+
+            self.simulation = Simulation(data, self.ui.get_size_world(), preset_data)
+            self.has_simulation_started = True
+            self.start_simulation()
+        except InfectionError:
+            self.ui.reset_simulation()
+            self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Warning infected&#39;,
+                                                                              &#34;Warning: The number of infected &#34;
+                                                                              &#34;people must not exceed that of &#34;
+                                                                              &#34;humans.&#34;),
+                                 &#34;red&#34;, 10000)
+
+    def connect_ui_elements(self) -&gt; None:
+        &#34;&#34;&#34;Connects all signals of the view with the presenter.&#34;&#34;&#34;
+        self.ui.start_simulation_signal.connect(self.start_simulation)
+        self.ui.reset_simulation_signal.connect(self.reset_simulation)
+        self.ui.window_resized_signal.connect(self.resize_window)
+        self.ui.simulation_speed_changed_signal.connect(self.speed_changed)
+        self.ui.export_signal.connect(self.export_granularity)
+        self.ui.export_confirmation_signal.connect(self.save_export)
+        self.ui.show_about_signal.connect(self.show_about_view)
+        self.ui.show_infection_radius_signal.connect(self.show_infection_radius_changed)
+        self.ui.show_home_signal.connect(self.show_home_changed)
+        self.ui.show_humans_signal.connect(self.show_humans_changed)
+        self.ui.show_social_distance_signal.connect(self.show_social_distance_changed)
+        self.ui.language_changed_signal.connect(self.change_lang)
+        self.ui.open_doc_signal.connect(self.open_doc)
+        self.ui.abort_export_signal.connect(self.abort_export)
+
+    def resize_window(self) -&gt; None:
+        &#34;&#34;&#34;Is called, when the window is resized. Tells the simulation that the size of the world has changed.&#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.set_world_size(self.ui.get_old_size_world(), self.ui.get_size_world())
+            self.ui.update_data(self.simulation.get_data())
+
+    def speed_changed(self, speed: int) -&gt; None:
+        &#34;&#34;&#34;Is called, when the simulation speed is changed. Corrects the speed in the simulation parameter via the
+        simulation.
+
+        Parameters
+        ----------
+        speed : int
+            The value of the simulation speed slider
+        &#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.speed_changed(speed)
+
+    def export_granularity(self) -&gt; None:
+        &#34;&#34;&#34;Is called, when the user wants to start the export-process.
+        Switches stacked widget from parameter to export and stops the simulation.
+        If there is no simulation a warning_text will be displayed.&#34;&#34;&#34;
+        if not self.has_simulation_started:
+            self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Warning export&#39;,
+                                                                              &#34;Warning: No data is available yet. The &#34;
+                                                                              &#34;simulation must first be started.&#34;),
+                                 &#34;red&#34;, 10000)
+        else:
+            self.ui.switch_parameter_widget()
+            if self.is_simulation_running:
+                self.start_simulation()
+                self.ui.dis_enable_export(True)
+
+    def save_export(self) -&gt; None:
+        &#34;&#34;&#34;Is called, when the user wants to choose the file location where the exported data will be saved.
+        Switches stacked widget from export to the parameters.
+        Displays an information when the data is successfully exported.&#34;&#34;&#34;
+        export_parameter = self.ui.get_export_parameter()
+        if not export_parameter[&#39;plot&#39;] and not export_parameter[&#39;csv&#39;]:
+            self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Message export not chosen&#39;,
+                                                                              &#34;The export failed, because no option is &#34;
+                                                                              &#34;selected.&#34;),
+                                 &#34;red&#34;, 5000)
+            return
+        options = QFileDialog.Options()
+        location = &#34;&#34;
+        if export_parameter[&#39;csv&#39;] and export_parameter[&#39;plot&#39;]:
+            location, _ = QFileDialog.getSaveFileName(self.ui,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export data&#39;,
+                                                                                                      &#34;Export data&#34;),
+                                                         &#34;&#34;,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export file zip&#39;,
+                                                                                                      &#34;zip-file &#34;
+                                                                                                      &#34;(*.zip)&#34;),
+                                                         options=options)
+        elif export_parameter[&#39;csv&#39;]:
+            location, _ = QFileDialog.getSaveFileName(self.ui,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export data&#39;,
+                                                                                                      &#34;Export data&#34;),
+                                                         &#34;&#34;,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export file csv&#39;,
+                                                                                                         &#34;csv-file &#34;
+                                                                                                         &#34;(*.csv)&#34;),
+                                                         options=options)
+        elif export_parameter[&#39;plot&#39;]:
+            location, _ = QFileDialog.getSaveFileName(self.ui,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export data&#39;,
+                                                                                                      &#34;Export data&#34;),
+                                                         &#34;&#34;,
+                                                         QtCore.QCoreApplication.instance().translate(&#39;Export file png&#39;,
+                                                                                                      &#34;png-file &#34;
+                                                                                                      &#34;(*.png)&#34;),
+                                                         options=options)
+        res = self.simulation.export_data(location, export_parameter)
+        self.ui.switch_parameter_widget()
+        if res:
+            self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Message export successful&#39;,
+                                                                              &#34;The simulation data was exported &#34;
+                                                                              &#34;successfully.&#34;),
+                                 &#34;green&#34;, 5000)
+        else:
+            self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Message export failed&#39;,
+                                                                              &#34;The export failed.&#34;),
+                                 &#34;red&#34;, 5000)
+        self.ui.dis_enable_export(False)
+
+    def abort_export(self) -&gt; None:
+        &#34;&#34;&#34;Aborts export and changes the widget and enables the control&#34;&#34;&#34;
+        self.ui.switch_parameter_widget()
+        self.ui.dis_enable_export(False)
+
+    def show_about_view(self) -&gt; None:
+        &#34;&#34;&#34;Show the aboutWindow&#34;&#34;&#34;
+        self.about_view.show()
+        self.about_view.foregroundRole()
+
+    def show_infection_radius_changed(self) -&gt; None:
+        &#34;&#34;&#34;Is called when the parameter show infection radius from the extended view section is toggled.
+        Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.show_infection_radius_changed(self.ui.get_show_infection_radius())
+
+    def show_home_changed(self) -&gt; None:
+        &#34;&#34;&#34;Is called when the parameter show homes from the extended view section is toggled.
+                Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.show_home_changed(self.ui.get_show_home())
+
+    def show_humans_changed(self) -&gt; None:
+        &#34;&#34;&#34;Is called when the parameter show humans from the extended view section is toggled.
+                Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.show_humans_changed(self.ui.get_show_humans())
+
+    def show_social_distance_changed(self) -&gt; None:
+        &#34;&#34;&#34;Is called when the parameter show social distance from the extended view section is toggled.
+                Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+        if self.simulation is not None:
+            self.simulation.show_social_distance_changed(self.ui.get_show_social_distance())
+
+    def change_lang(self) -&gt; None:
+        &#34;&#34;&#34;Is called when the user wants to switch the language in the menubar.
+        Changes the language and tells the view to translate itself.&#34;&#34;&#34;
+        if self.lang == &#39;de&#39;:
+            self.lang = &#39;en&#39;
+            self.trans_presenter.load(&#39;resources/translations/presenter-en-en.qm&#39;)
+            self.trans_window.load(&#39;resources/translations/window-de-en.qm&#39;)
+            self.trans_about_window.load(&#39;resources/translations/about-de-en.qm&#39;)
+            self.trans_view.load(&#39;resources/translations/view-en-en.qm&#39;)
+            self.trans_export.load(&#39;resources/translations/export-en-en.qm&#39;)
+        else:
+            self.lang = &#39;de&#39;
+            self.trans_presenter.load(&#39;resources/translations/presenter-en-de.qm&#39;)
+            self.trans_window.load(&#39;resources/translations/window-de-de.qm&#39;)
+            self.trans_about_window.load(&#39;resources/translations/about-de-de.qm&#39;)
+            self.trans_view.load(&#39;resources/translations/view-en-de.qm&#39;)
+            self.trans_export.load(&#39;resources/translations/export-en-de.qm&#39;)
+        self.ui.change_lang(self.lang)
+        self.about_view.change_lang()
+
+    def open_doc(self) -&gt; None:
+        &#34;&#34;&#34;Opens the documentation in a new window or in a browser.&#34;&#34;&#34;
+        if self.doc_view is not None:
+            self.doc_view.setFixedSize(QSize(self.ui.size().width(), self.ui.size().height()))
+            self.doc_view.show()
+        else:
+            open_doc_in_browser()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.abort_export"><code class="name flex">
+<span>def <span class="ident">abort_export</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Aborts export and changes the widget and enables the control</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def abort_export(self) -&gt; None:
+    &#34;&#34;&#34;Aborts export and changes the widget and enables the control&#34;&#34;&#34;
+    self.ui.switch_parameter_widget()
+    self.ui.dis_enable_export(False)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.change_lang"><code class="name flex">
+<span>def <span class="ident">change_lang</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is called when the user wants to switch the language in the menubar.
+Changes the language and tells the view to translate itself.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def change_lang(self) -&gt; None:
+    &#34;&#34;&#34;Is called when the user wants to switch the language in the menubar.
+    Changes the language and tells the view to translate itself.&#34;&#34;&#34;
+    if self.lang == &#39;de&#39;:
+        self.lang = &#39;en&#39;
+        self.trans_presenter.load(&#39;resources/translations/presenter-en-en.qm&#39;)
+        self.trans_window.load(&#39;resources/translations/window-de-en.qm&#39;)
+        self.trans_about_window.load(&#39;resources/translations/about-de-en.qm&#39;)
+        self.trans_view.load(&#39;resources/translations/view-en-en.qm&#39;)
+        self.trans_export.load(&#39;resources/translations/export-en-en.qm&#39;)
+    else:
+        self.lang = &#39;de&#39;
+        self.trans_presenter.load(&#39;resources/translations/presenter-en-de.qm&#39;)
+        self.trans_window.load(&#39;resources/translations/window-de-de.qm&#39;)
+        self.trans_about_window.load(&#39;resources/translations/about-de-de.qm&#39;)
+        self.trans_view.load(&#39;resources/translations/view-en-de.qm&#39;)
+        self.trans_export.load(&#39;resources/translations/export-en-de.qm&#39;)
+    self.ui.change_lang(self.lang)
+    self.about_view.change_lang()</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.connect_ui_elements"><code class="name flex">
+<span>def <span class="ident">connect_ui_elements</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Connects all signals of the view with the presenter.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def connect_ui_elements(self) -&gt; None:
+    &#34;&#34;&#34;Connects all signals of the view with the presenter.&#34;&#34;&#34;
+    self.ui.start_simulation_signal.connect(self.start_simulation)
+    self.ui.reset_simulation_signal.connect(self.reset_simulation)
+    self.ui.window_resized_signal.connect(self.resize_window)
+    self.ui.simulation_speed_changed_signal.connect(self.speed_changed)
+    self.ui.export_signal.connect(self.export_granularity)
+    self.ui.export_confirmation_signal.connect(self.save_export)
+    self.ui.show_about_signal.connect(self.show_about_view)
+    self.ui.show_infection_radius_signal.connect(self.show_infection_radius_changed)
+    self.ui.show_home_signal.connect(self.show_home_changed)
+    self.ui.show_humans_signal.connect(self.show_humans_changed)
+    self.ui.show_social_distance_signal.connect(self.show_social_distance_changed)
+    self.ui.language_changed_signal.connect(self.change_lang)
+    self.ui.open_doc_signal.connect(self.open_doc)
+    self.ui.abort_export_signal.connect(self.abort_export)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.create_simulation"><code class="name flex">
+<span>def <span class="ident">create_simulation</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates the simulation.</p>
+<p>Request the parameters from the view, checks if they are valid and
+creates a SimulationParameter object which contains all parameters
+and starts the simulation. If the data is invalid, a warning_text is
+displayed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_simulation(self) -&gt; None:
+    &#34;&#34;&#34;Creates the simulation.
+
+    Request the parameters from the view, checks if they are valid and
+    creates a SimulationParameter object which contains all parameters
+    and starts the simulation. If the data is invalid, a warning_text is
+    displayed.&#34;&#34;&#34;
+    try:
+        data = self.ui.create_simulation()
+        if int(data[&#39;humans&#39;]) &lt; int(data[&#39;infected&#39;]):
+            raise InfectionError()
+        if data[&#39;preset&#39;] != 0:
+            preset_data = self.ui.get_current_preset_data()
+        else:
+            preset_data = None
+
+        self.simulation = Simulation(data, self.ui.get_size_world(), preset_data)
+        self.has_simulation_started = True
+        self.start_simulation()
+    except InfectionError:
+        self.ui.reset_simulation()
+        self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Warning infected&#39;,
+                                                                          &#34;Warning: The number of infected &#34;
+                                                                          &#34;people must not exceed that of &#34;
+                                                                          &#34;humans.&#34;),
+                             &#34;red&#34;, 10000)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.export_granularity"><code class="name flex">
+<span>def <span class="ident">export_granularity</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is called, when the user wants to start the export-process.
+Switches stacked widget from parameter to export and stops the simulation.
+If there is no simulation a warning_text will be displayed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def export_granularity(self) -&gt; None:
+    &#34;&#34;&#34;Is called, when the user wants to start the export-process.
+    Switches stacked widget from parameter to export and stops the simulation.
+    If there is no simulation a warning_text will be displayed.&#34;&#34;&#34;
+    if not self.has_simulation_started:
+        self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Warning export&#39;,
+                                                                          &#34;Warning: No data is available yet. The &#34;
+                                                                          &#34;simulation must first be started.&#34;),
+                             &#34;red&#34;, 10000)
+    else:
+        self.ui.switch_parameter_widget()
+        if self.is_simulation_running:
+            self.start_simulation()
+            self.ui.dis_enable_export(True)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.main_loop"><code class="name flex">
+<span>def <span class="ident">main_loop</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main loop which is called 60 times per second.</p>
+<p>Tells the model to simulate a step. Request the simulation data from the model and sends it to the view.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main_loop(self) -&gt; None:
+    &#34;&#34;&#34;Main loop which is called 60 times per second.
+
+    Tells the model to simulate a step. Request the simulation data from the model and sends it to the view.&#34;&#34;&#34;
+    if self.is_simulation_running:
+        self.simulation.simulate()
+        self.ui.update_data(self.simulation.get_data())</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.open_doc"><code class="name flex">
+<span>def <span class="ident">open_doc</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens the documentation in a new window or in a browser.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def open_doc(self) -&gt; None:
+    &#34;&#34;&#34;Opens the documentation in a new window or in a browser.&#34;&#34;&#34;
+    if self.doc_view is not None:
+        self.doc_view.setFixedSize(QSize(self.ui.size().width(), self.ui.size().height()))
+        self.doc_view.show()
+    else:
+        open_doc_in_browser()</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.reset_simulation"><code class="name flex">
+<span>def <span class="ident">reset_simulation</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resets the simulation and the view.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reset_simulation(self) -&gt; None:
+    &#34;&#34;&#34;Resets the simulation and the view.&#34;&#34;&#34;
+    self.simulation.reset()
+    self.has_simulation_started = False
+    self.is_simulation_running = False
+    self.simulation = None
+    self.ui.reset_simulation()</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.resize_window"><code class="name flex">
+<span>def <span class="ident">resize_window</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is called, when the window is resized. Tells the simulation that the size of the world has changed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resize_window(self) -&gt; None:
+    &#34;&#34;&#34;Is called, when the window is resized. Tells the simulation that the size of the world has changed.&#34;&#34;&#34;
+    if self.simulation is not None:
+        self.simulation.set_world_size(self.ui.get_old_size_world(), self.ui.get_size_world())
+        self.ui.update_data(self.simulation.get_data())</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.save_export"><code class="name flex">
+<span>def <span class="ident">save_export</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is called, when the user wants to choose the file location where the exported data will be saved.
+Switches stacked widget from export to the parameters.
+Displays an information when the data is successfully exported.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_export(self) -&gt; None:
+    &#34;&#34;&#34;Is called, when the user wants to choose the file location where the exported data will be saved.
+    Switches stacked widget from export to the parameters.
+    Displays an information when the data is successfully exported.&#34;&#34;&#34;
+    export_parameter = self.ui.get_export_parameter()
+    if not export_parameter[&#39;plot&#39;] and not export_parameter[&#39;csv&#39;]:
+        self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Message export not chosen&#39;,
+                                                                          &#34;The export failed, because no option is &#34;
+                                                                          &#34;selected.&#34;),
+                             &#34;red&#34;, 5000)
+        return
+    options = QFileDialog.Options()
+    location = &#34;&#34;
+    if export_parameter[&#39;csv&#39;] and export_parameter[&#39;plot&#39;]:
+        location, _ = QFileDialog.getSaveFileName(self.ui,
+                                                     QtCore.QCoreApplication.instance().translate(&#39;Export data&#39;,
+                                                                                                  &#34;Export data&#34;),
+                                                     &#34;&#34;,
+                                                     QtCore.QCoreApplication.instance().translate(&#39;Export file zip&#39;,
+                                                                                                  &#34;zip-file &#34;
+                                                                                                  &#34;(*.zip)&#34;),
+                                                     options=options)
+    elif export_parameter[&#39;csv&#39;]:
+        location, _ = QFileDialog.getSaveFileName(self.ui,
+                                                     QtCore.QCoreApplication.instance().translate(&#39;Export data&#39;,
+                                                                                                  &#34;Export data&#34;),
+                                                     &#34;&#34;,
+                                                     QtCore.QCoreApplication.instance().translate(&#39;Export file csv&#39;,
+                                                                                                     &#34;csv-file &#34;
+                                                                                                     &#34;(*.csv)&#34;),
+                                                     options=options)
+    elif export_parameter[&#39;plot&#39;]:
+        location, _ = QFileDialog.getSaveFileName(self.ui,
+                                                     QtCore.QCoreApplication.instance().translate(&#39;Export data&#39;,
+                                                                                                  &#34;Export data&#34;),
+                                                     &#34;&#34;,
+                                                     QtCore.QCoreApplication.instance().translate(&#39;Export file png&#39;,
+                                                                                                  &#34;png-file &#34;
+                                                                                                  &#34;(*.png)&#34;),
+                                                     options=options)
+    res = self.simulation.export_data(location, export_parameter)
+    self.ui.switch_parameter_widget()
+    if res:
+        self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Message export successful&#39;,
+                                                                          &#34;The simulation data was exported &#34;
+                                                                          &#34;successfully.&#34;),
+                             &#34;green&#34;, 5000)
+    else:
+        self.ui.show_warning(QtCore.QCoreApplication.instance().translate(&#39;Message export failed&#39;,
+                                                                          &#34;The export failed.&#34;),
+                             &#34;red&#34;, 5000)
+    self.ui.dis_enable_export(False)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.show_about_view"><code class="name flex">
+<span>def <span class="ident">show_about_view</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Show the aboutWindow</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_about_view(self) -&gt; None:
+    &#34;&#34;&#34;Show the aboutWindow&#34;&#34;&#34;
+    self.about_view.show()
+    self.about_view.foregroundRole()</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.show_home_changed"><code class="name flex">
+<span>def <span class="ident">show_home_changed</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is called when the parameter show homes from the extended view section is toggled.
+Saves the change to the simulation parameters via the simulation</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_home_changed(self) -&gt; None:
+    &#34;&#34;&#34;Is called when the parameter show homes from the extended view section is toggled.
+            Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+    if self.simulation is not None:
+        self.simulation.show_home_changed(self.ui.get_show_home())</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.show_humans_changed"><code class="name flex">
+<span>def <span class="ident">show_humans_changed</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is called when the parameter show humans from the extended view section is toggled.
+Saves the change to the simulation parameters via the simulation</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_humans_changed(self) -&gt; None:
+    &#34;&#34;&#34;Is called when the parameter show humans from the extended view section is toggled.
+            Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+    if self.simulation is not None:
+        self.simulation.show_humans_changed(self.ui.get_show_humans())</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.show_infection_radius_changed"><code class="name flex">
+<span>def <span class="ident">show_infection_radius_changed</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is called when the parameter show infection radius from the extended view section is toggled.
+Saves the change to the simulation parameters via the simulation</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_infection_radius_changed(self) -&gt; None:
+    &#34;&#34;&#34;Is called when the parameter show infection radius from the extended view section is toggled.
+    Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+    if self.simulation is not None:
+        self.simulation.show_infection_radius_changed(self.ui.get_show_infection_radius())</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.show_social_distance_changed"><code class="name flex">
+<span>def <span class="ident">show_social_distance_changed</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is called when the parameter show social distance from the extended view section is toggled.
+Saves the change to the simulation parameters via the simulation</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_social_distance_changed(self) -&gt; None:
+    &#34;&#34;&#34;Is called when the parameter show social distance from the extended view section is toggled.
+            Saves the change to the simulation parameters via the simulation&#34;&#34;&#34;
+    if self.simulation is not None:
+        self.simulation.show_social_distance_changed(self.ui.get_show_social_distance())</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.speed_changed"><code class="name flex">
+<span>def <span class="ident">speed_changed</span></span>(<span>self, speed: int) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is called, when the simulation speed is changed. Corrects the speed in the simulation parameter via the
+simulation.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>speed</code></strong> :&ensp;<code>int</code></dt>
+<dd>The value of the simulation speed slider</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def speed_changed(self, speed: int) -&gt; None:
+    &#34;&#34;&#34;Is called, when the simulation speed is changed. Corrects the speed in the simulation parameter via the
+    simulation.
+
+    Parameters
+    ----------
+    speed : int
+        The value of the simulation speed slider
+    &#34;&#34;&#34;
+    if self.simulation is not None:
+        self.simulation.speed_changed(speed)</code></pre>
+</details>
+</dd>
+<dt id="Pandemic-Simulator.presenter.presenter.Presenter.start_simulation"><code class="name flex">
+<span>def <span class="ident">start_simulation</span></span>(<span>self) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Starts and stops the simulation. When no simulation is available, a new one is created.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def start_simulation(self) -&gt; None:
+    &#34;&#34;&#34;Starts and stops the simulation. When no simulation is available, a new one is created.&#34;&#34;&#34;
+    if not self.has_simulation_started:
+        self.create_simulation()
+    else:
+        if self.is_simulation_running:
+            self.is_simulation_running = False
+        else:
+            self.is_simulation_running = True
+        self.ui.switch_start_stop_buttons()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Pandemic-Simulator.presenter" href="index.html">Pandemic-Simulator.presenter</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Pandemic-Simulator.presenter.presenter.Presenter" href="#Pandemic-Simulator.presenter.presenter.Presenter">Presenter</a></code></h4>
+<ul class="">
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.abort_export" href="#Pandemic-Simulator.presenter.presenter.Presenter.abort_export">abort_export</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.change_lang" href="#Pandemic-Simulator.presenter.presenter.Presenter.change_lang">change_lang</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.connect_ui_elements" href="#Pandemic-Simulator.presenter.presenter.Presenter.connect_ui_elements">connect_ui_elements</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.create_simulation" href="#Pandemic-Simulator.presenter.presenter.Presenter.create_simulation">create_simulation</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.export_granularity" href="#Pandemic-Simulator.presenter.presenter.Presenter.export_granularity">export_granularity</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.main_loop" href="#Pandemic-Simulator.presenter.presenter.Presenter.main_loop">main_loop</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.open_doc" href="#Pandemic-Simulator.presenter.presenter.Presenter.open_doc">open_doc</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.reset_simulation" href="#Pandemic-Simulator.presenter.presenter.Presenter.reset_simulation">reset_simulation</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.resize_window" href="#Pandemic-Simulator.presenter.presenter.Presenter.resize_window">resize_window</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.save_export" href="#Pandemic-Simulator.presenter.presenter.Presenter.save_export">save_export</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.show_about_view" href="#Pandemic-Simulator.presenter.presenter.Presenter.show_about_view">show_about_view</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.show_home_changed" href="#Pandemic-Simulator.presenter.presenter.Presenter.show_home_changed">show_home_changed</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.show_humans_changed" href="#Pandemic-Simulator.presenter.presenter.Presenter.show_humans_changed">show_humans_changed</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.show_infection_radius_changed" href="#Pandemic-Simulator.presenter.presenter.Presenter.show_infection_radius_changed">show_infection_radius_changed</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.show_social_distance_changed" href="#Pandemic-Simulator.presenter.presenter.Presenter.show_social_distance_changed">show_social_distance_changed</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.speed_changed" href="#Pandemic-Simulator.presenter.presenter.Presenter.speed_changed">speed_changed</a></code></li>
+<li><code><a title="Pandemic-Simulator.presenter.presenter.Presenter.start_simulation" href="#Pandemic-Simulator.presenter.presenter.Presenter.start_simulation">start_simulation</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
